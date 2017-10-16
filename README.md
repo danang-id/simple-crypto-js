@@ -13,6 +13,12 @@
   * [SimpleCryptoJS Secret Property](#simplecryptojs-secret-property)
   * [Object Encryption](#object-encryption)
   * [Random Key Generator](#random-key-generator)
+* [Built With](#built-with)
+* [Contribution](#contribution)
+* [Versioning](#versioning)
+* [Authors](#authors)
+* [License](#license)
+* [Acknowledgments](#acknowledgments)
 
 ## Getting Started
 
@@ -254,7 +260,7 @@ Yes, of course and obvious, because it is a static function, you are not require
 
 Written in [TypeScript](http://www.dropwizard.io/1.0.2/docs/), built into ECMAScript 5. 
 
-## Contributing
+## Contribution
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
