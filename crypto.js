@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var crypto_js_1 = require("crypto-js");
 var SimpleCrypto = /** @class */ (function () {
     function SimpleCrypto(secret) {
@@ -11,31 +11,31 @@ var SimpleCrypto = /** @class */ (function () {
     }
     SimpleCrypto.prototype.encrypt = function (string) {
         var salt = SimpleCrypto.generateRandom(128, true);
-        var key = crypto_js_1["default"].PBKDF2(this.secret, salt, {
+        var key = crypto_js_1.default.PBKDF2(this.secret, salt, {
             keySize: this.keySize / 32,
             iterations: this.iterations
         });
         var initialVector = SimpleCrypto.generateRandom(128, true);
-        var encrypted = crypto_js_1["default"].AES.encrypt(string, key, {
+        var encrypted = crypto_js_1.default.AES.encrypt(string, key, {
             iv: initialVector,
-            padding: crypto_js_1["default"].pad.Pkcs7,
-            mode: crypto_js_1["default"].mode.CBC
+            padding: crypto_js_1.default.pad.Pkcs7,
+            mode: crypto_js_1.default.mode.CBC
         });
         return salt.toString() + initialVector.toString() + encrypted.toString();
     };
     SimpleCrypto.prototype.decrypt = function (string, enc) {
-        if (enc === void 0) { enc = crypto_js_1["default"].enc.Utf8; }
-        var salt = crypto_js_1["default"].enc.Hex.parse(string.substr(0, 32));
-        var initialVector = crypto_js_1["default"].enc.Hex.parse(string.substr(32, 32));
+        if (enc === void 0) { enc = crypto_js_1.default.enc.Utf8; }
+        var salt = crypto_js_1.default.enc.Hex.parse(string.substr(0, 32));
+        var initialVector = crypto_js_1.default.enc.Hex.parse(string.substr(32, 32));
         var encrypted = string.substring(64);
-        var key = crypto_js_1["default"].PBKDF2(this.secret, salt, {
+        var key = crypto_js_1.default.PBKDF2(this.secret, salt, {
             keySize: this.keySize / 32,
             iterations: this.iterations
         });
-        var decrypted = crypto_js_1["default"].AES.decrypt(encrypted, key, {
+        var decrypted = crypto_js_1.default.AES.decrypt(encrypted, key, {
             iv: initialVector,
-            padding: crypto_js_1["default"].pad.Pkcs7,
-            mode: crypto_js_1["default"].mode.CBC
+            padding: crypto_js_1.default.pad.Pkcs7,
+            mode: crypto_js_1.default.mode.CBC
         });
         return decrypted.toString(enc);
     };
@@ -48,9 +48,9 @@ var SimpleCrypto = /** @class */ (function () {
     SimpleCrypto.generateRandom = function (length, wordArray) {
         if (length === void 0) { length = 128; }
         if (wordArray === void 0) { wordArray = false; }
-        var random = crypto_js_1["default"].lib.WordArray.random(length / 8);
+        var random = crypto_js_1.default.lib.WordArray.random(length / 8);
         return (wordArray) ? random : random.toString();
     };
     return SimpleCrypto;
 }());
-exports["default"] = SimpleCrypto;
+exports.default = SimpleCrypto;
