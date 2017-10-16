@@ -14,15 +14,17 @@ To get this library included on your project/application, just hit `npm install`
 npm install --save simple-crypto-js
 ```
 
-If you are using the new ECMAScript 6 (ECMAScript 2015), you may use the new import statement:
+If you are using the new ECMAScript 6 (ECMAScript 2015) and later, you may use the new import statement:
 
 ```
+// ECMAScript 6 and later
 import SimpleCryptoJS from 'simple-crypto-js';
 ```
 
 However, if you are using ECMAScript 5 and older, use the require statement:
 
 ```
+// ECMAScript 5 and older
 var SimpleCryptoJS = require('simple-crypto-js').SimpleCryptoJS;
 ```
 
