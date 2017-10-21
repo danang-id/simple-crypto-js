@@ -1,6 +1,6 @@
 {
   "name": "simple-crypto-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simplify AES encryption and decryption of any JavaScript objects, implementing crypto-js library.",
   "main": "crypto.js",
   "homepage": "https://github.com/danang-id/simple-crypto-js",
