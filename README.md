@@ -97,10 +97,10 @@ let plainText = 'Hello World!';
 let chiperText = simpleCrypto.encrypt(plainText);
 console.log(`Encryption process...`);
 console.log(`Plain Text    : ${plainText}`);
-console.log(`Cipher Text   : ${cipherText}`);
-let decipherText = simpleCrypto.decrypt(cipherText);
+console.log(`Cipher Text   : ${chiperText}`);
+let decipherText = simpleCrypto.decrypt(chiperText);
 console.log(`... and then decryption...`);
-console.log(`Decipher Text : ${cipherText}`);
+console.log(`Decipher Text : ${chiperText}`);
 console.log(`... done.`);
 ```
 
