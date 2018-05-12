@@ -31,6 +31,11 @@ To get this library included on your project/application, just hit `npm install`
 ```
 npm install --save simple-crypto-js
 ```
+Or, if you're using yarn.
+
+```
+yarn add simple-crypto-js
+```
 
 If you are using the new ECMAScript 6 (ECMAScript 2015) and later, you may use the new import statement:
 
@@ -100,7 +105,7 @@ console.log(`Plain Text    : ${plainText}`);
 console.log(`Cipher Text   : ${cipherText}`);
 let decipherText = simpleCrypto.decrypt(cipherText);
 console.log(`... and then decryption...`);
-console.log(`Decipher Text : ${cipherText}`);
+console.log(`Decipher Text : ${decipherText}`);
 console.log(`... done.`);
 ```
 
@@ -122,7 +127,7 @@ console.log("Plain Text    : " + plainText);
 console.log("Cipher Text   : " + cipherText);
 var decipherText = simpleCrypto.decrypt(cipherText);
 console.log("... and then decryption...");
-console.log("Decipher Text : " + cipherText);
+console.log("Decipher Text : " + decipherText);
 console.log("... done.");
 ```
 
@@ -143,7 +148,7 @@ console.log(`Plain Text    : ${plainText}`);
 console.log(`Cipher Text   : ${cipherText}`);
 let decipherText = simpleCrypto2.decrypt(cipherText);
 console.log(`... and then decryption...`);
-console.log(`Decipher Text : ${cipherText}`);
+console.log(`Decipher Text : ${decipherText}`);
 console.log(`... done.`);
 ```
 
@@ -160,7 +165,7 @@ console.log("Plain Text    : " + plainText);
 console.log("Cipher Text   : " + cipherText);
 var decipherText = simpleCrypto2.decrypt(cipherText);
 console.log("... and then decryption...");
-console.log("Decipher Text : " + cipherText);
+console.log("Decipher Text : " + decipherText);
 console.log("... done.");
 ```
 
