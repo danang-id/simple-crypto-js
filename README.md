@@ -1,4 +1,4 @@
-# SimpleCryptoJS 1.0.0
+# SimpleCryptoJS 1.1.1
 
 ***SimpleCryptoJS*** is a JavaScript library that simplify the process of encryption and decryption of JavaScript objects, as simple as just calling `encrypt()` and `decrypt()` function. This library implementing brix's [crypto-js](https://github.com/brix/crypto-js) library. This library is pure JavaScript library built with TypeScript targeting ECMAScript 5 (ES5), so it is compatible with most NodeJS back-end applications or JavaScript front-end (client browser).
 
@@ -53,7 +53,7 @@ var SimpleCryptoJS = require('simple-crypto-js').SimpleCryptoJS;
 
 ## Documentation
 
-***SimpleCryptoJS*** 1.0.0 has a single class with only 5 function to keep it's simplicity. This is full documentation about the library and how to use it on your project/application, all with examples on both ECMAScript 6 (and later) and ECMAScript 5 (and older).
+***SimpleCryptoJS*** has a single class with only 5 function to keep it's simplicity. This is full documentation about the library and how to use it on your project/application, all with examples on both ECMAScript 6 (and later) and ECMAScript 5 (and older).
 
 ### SimpleCryptoJS Class
 
@@ -263,11 +263,11 @@ Yes, of course and obvious, because it is a static function, you are not require
 
 ## Built With
 
-Written in [TypeScript](http://www.dropwizard.io/1.0.2/docs/), built into ECMAScript 5. 
+Written in [TypeScript](https://typscriptlang.org/), built into ECMAScript 5. 
 
 ## Contribution
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -281,7 +281,7 @@ See also the list of [contributors](https://github.com/danang-id/simple-crypto-j
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
