@@ -6,6 +6,7 @@
 
 * [SimpleCrypto 2.0.0](#simplecrypto-200)
   * [List of Contents](#list-of-contents)
+  * [Changes Log (What's New)](#changes-log-whats-new)
   * [Getting Started](#getting-started)
     * [Installation](#installation)
   * [Documentation](#documentation)
@@ -21,6 +22,15 @@
   * [Authors](#authors)
   * [License](#license)
   * [Acknowledgments](#acknowledgments)
+
+## Changes Log (What's New)
+
+* Using only these functions to encrypt or decrypt: `encrypt()` and `decrypt()` (accepts string, object, number, or boolean data type). Function `encryptObject()` and `decryptObject()` is in deprecation as these functions are enough.
+* Securing instance's properties from public access. Access to instance properties, like `instance.secret`, is not allowed anymore.
+* New TypeScript definition file of this library is now available.
+* Fixed documentation (typos, diction, etc).
+* For contributor: Using `mocha`, `chai` and `coveralls` to create full unit-testing of the library. You could see testing result on top of this README.
+* For contributor: Using `gulp` to compile the TypeScript source code into JavaScript ES5.
 
 ## Getting Started
 
@@ -50,6 +60,15 @@ However, if you are using ECMAScript 5 and older, use the require statement:
 ```javascript
 // ES5 and older
 var SimpleCrypto = require("simple-crypto-js").default;
+```
+
+If you're writing a project using [TypeScript](https://www.typescriptlang.org/) language, you might want to install TypeScript definition file to your project devDependencies.
+```bash
+# If you're using NPM
+npm install --save-dev @types/simple-crypto-js
+
+# If you're using Yarn
+yarn add @types/simple-crypto-js --dev
 ```
 
 ## Documentation

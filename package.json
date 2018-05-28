@@ -6,7 +6,9 @@
   "homepage": "https://github.com/danang-id/simple-crypto-js",
   "scripts": {
     "build": "gulp scripts",
-    "test": "mocha --reporter spec --require ts-node/register 'test/**/*.test.ts'"
+    "test": "mocha --reporter spec --require ts-node/register 'test/**/*.test.ts'",
+    "test:watch": "mocha --watch --reporter spec --require ts-node/register 'test/**/*.test.ts'",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "crypto-js": "^3.1.9-1"
@@ -18,9 +20,11 @@
     "@types/crypto-js": "^3.1.39",
     "@types/mocha": "^5.2.0",
     "chai": "^4.1.2",
+    "coveralls": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-typescript": "^4.0.2",
     "mocha": "^5.2.0",
+    "nyc": "^11.8.0",
     "ts-node": "^6.0.5",
     "typescript": "^2.8.3"
   }
