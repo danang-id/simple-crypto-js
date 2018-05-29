@@ -1,20 +1,24 @@
 {
   "name": "simple-crypto-js",
   "version": "2.0.2",
-  "description": "Simplify AES encryption and decryption of any JavaScript objects, implementing crypto-js library.",
-  "main": "src/SimpleCrypto.js",
+  "description":
+    "Simplify AES encryption and decryption of any JavaScript objects, implementing crypto-js library.",
+  "repository": "https://github.com/danang-id/simple-crypto-js.git",
   "homepage": "https://github.com/danang-id/simple-crypto-js",
+  "author": "https://github.com/danang-id",
+  "license": "MIT",
+  "main": "src/SimpleCrypto.js",
   "scripts": {
     "build": "gulp scripts",
-    "test": "nyc mocha --reporter spec --require ts-node/register 'test/**/*.test.ts'",
-    "test:watch": "nyc mocha --watch --reporter spec --require ts-node/register 'test/**/*.test.ts'",
+    "test":
+      "nyc mocha --reporter spec --require ts-node/register 'test/**/*.test.ts'",
+    "test:watch":
+      "nyc mocha --watch --reporter spec --require ts-node/register 'test/**/*.test.ts'",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "crypto-js": "^3.1.9-1"
   },
-  "author": "https://github.com/danang-id",
-  "license": "MIT",
   "devDependencies": {
     "@types/chai": "^4.1.3",
     "@types/crypto-js": "^3.1.39",
