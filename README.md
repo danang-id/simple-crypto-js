@@ -1,15 +1,15 @@
 # SimpleCrypto 2.0.1
 
 
-[![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)
+[![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
 [![Build Status](https://travis-ci.org/danang-id/simple-crypto-js.svg?branch=master)](https://travis-ci.org/danang-id/simple-crypto-js) 
 [![Coverage Status](https://coveralls.io/repos/github/danang-id/simple-crypto-js/badge.svg?branch=master)](https://coveralls.io/github/danang-id/simple-crypto-js?branch=master)
-[![Dependencies Status](https://img.shields.io/david/danang-id/simple-crypto-js.svg)](https://img.shields.io/david/danang-id/simple-crypto-js.svg)
-[![DevDependencies Status](https://img.shields.io/david/dev/danang-id/simple-crypto-js.svg)](https://img.shields.io/david/dev/danang-id/simple-crypto-js.svg)
+[![Dependencies Status](https://img.shields.io/david/danang-id/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
+[![DevDependencies Status](https://img.shields.io/david/dev/danang-id/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
 
-[![NPM Version](https://img.shields.io/npm/v/simple-crypto-js.svg)](https://img.shields.io/npm/v/simple-crypto-js.svg)
-[![License](https://img.shields.io/npm/l/simple-crypto-js.svg)](https://img.shields.io/npm/l/simple-crypto-js.svg)
-[![Monthly Downloads](https://img.shields.io/npm/dm/simple-crypto-js.svg)](https://img.shields.io/npm/dm/simple-crypto-js.svg)
+[![NPM Version](https://img.shields.io/npm/v/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=versions)
+[![License](https://img.shields.io/npm/l/simple-crypto-js.svg)](#license)
+[![Monthly Downloads](https://img.shields.io/npm/dm/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js)
 
 **_SimpleCrypto_** is a JavaScript library that simplify the process of encryption and decryption of JavaScript objects, as simple as just calling `encrypt()` and `decrypt()` function. This library implements brix's [crypto-js](https://github.com/brix/crypto-js) library. This library is pure JavaScript library built with TypeScript targeting CommonJS ECMAScript 5 (ES5), so it is compatible with most NodeJS back-end applications or JavaScript front-end (client browser).
 
