@@ -55,7 +55,7 @@
 
 ## Getting Started
 
-This library is availabe through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and (soon) through CDN.
+This library is availabe through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and through [CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@2.0.2/src/SimpleCrypto.js).
 
 ### Installation
 
