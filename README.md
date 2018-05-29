@@ -1,4 +1,4 @@
-# SimpleCrypto 2.0.1
+# SimpleCrypto 2.0.2
 
 
 [![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
@@ -15,7 +15,7 @@
 
 ## List of Contents
 
-* [SimpleCrypto 2.0.1](#simplecrypto-201)
+* [SimpleCrypto 2.0.2](#simplecrypto-201)
   * [List of Contents](#list-of-contents)
   * [Changes Log (What's New)](#changes-log-whats-new)
   * [Getting Started](#getting-started)
