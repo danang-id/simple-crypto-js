@@ -1,4 +1,4 @@
-# SimpleCrypto 2.0.0
+# SimpleCrypto 2.0.1
 
 [![Build Status](https://travis-ci.org/danang-id/simple-crypto-js.svg?branch=master)](https://travis-ci.org/danang-id/simple-crypto-js) 
 [![Coverage Status](https://coveralls.io/repos/github/danang-id/simple-crypto-js/badge.svg?branch=master)](https://coveralls.io/github/danang-id/simple-crypto-js?branch=master)
@@ -7,7 +7,7 @@
 
 ## List of Contents
 
-* [SimpleCrypto 2.0.0](#simplecrypto-200)
+* [SimpleCrypto 2.0.1](#simplecrypto-201)
   * [List of Contents](#list-of-contents)
   * [Changes Log (What's New)](#changes-log-whats-new)
   * [Getting Started](#getting-started)
