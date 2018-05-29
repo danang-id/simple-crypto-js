@@ -65,15 +65,6 @@ However, if you are using ECMAScript 5 and older, use the require statement:
 var SimpleCrypto = require("simple-crypto-js").default;
 ```
 
-If you're writing a project using [TypeScript](https://www.typescriptlang.org/) language, you might want to install TypeScript definition file to your project devDependencies.
-```bash
-# If you're using NPM
-npm install --save-dev @types/simple-crypto-js
-
-# If you're using Yarn
-yarn add @types/simple-crypto-js --dev
-```
-
 ## Documentation
 
 **_SimpleCrypto_** has a single class with only two instance's functions and a single static function. This is by intention to keep it's simplicity. This is full documentation about the library and how to use it on your project. All examples work on both ECMAScript 6 (and later) and ECMAScript 5 (and older).
