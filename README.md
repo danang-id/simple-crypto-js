@@ -36,6 +36,16 @@
 
 ## Changes Log (What's New)
 
+**What's New in 2.0.2**
+
+* Bugs fixed
+
+**Included from 2.0.1**
+
+* Add coverage service
+
+**Included from 2.0.0**
+
 * Using only these functions to encrypt or decrypt: `encrypt()` and `decrypt()` (accepts string, object, number, or boolean data type). Function `encryptObject()` and `decryptObject()` is in deprecation as these functions are enough.
 * Securing instance's properties from public access. Access to instance properties, like `instance.secret`, is not allowed anymore.
 * New TypeScript definition file of this library is now available.
