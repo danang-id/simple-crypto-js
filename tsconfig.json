@@ -3,7 +3,8 @@
     "target": "es5",
     "module": "commonjs",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "outDir": "build"
   },
   "include": [
     "src/**/*.ts"
