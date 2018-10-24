@@ -6,7 +6,7 @@ export default class SimpleCrypto {
   private _keySize: number;
   private _iterations: number;
 
-  public constructor(secret) {
+  public constructor(secret: string) {
     if (secret === void 0) throw new Error('SimpleCrypto object MUST BE initialised with a SECRET KEY.');
     this._secret = secret;
     this._keySize = 256;
@@ -29,7 +29,7 @@ export default class SimpleCrypto {
     });
     const initialVector: string | CryptoJS.WordArray = SimpleCrypto.generateRandom(128, true);
     const encrypted: CryptoJS.WordArray = CryptoJS.AES.encrypt(string, key, {
-      iv: initialVector,
+      iv: initialVector as string,
       padding: CryptoJS.pad.Pkcs7,
       mode: CryptoJS.mode.CBC
     });
