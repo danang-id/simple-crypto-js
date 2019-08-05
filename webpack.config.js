@@ -2,8 +2,10 @@ const path = require('path');
 
 module.exports = {
     entry: './src/SimpleCrypto.ts',
-    devtool: 'inline-source-map',
     mode: 'production',
+    optimization: {
+        minimize: false
+    },
     module: {
         rules: [
             {
@@ -17,7 +19,10 @@ module.exports = {
         extensions: [ '.tsx', '.ts', '.js' ]
     },
     output: {
-        filename: 'SimpleCrypto.min.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: 'SimpleCrypto.js',
+        path: path.resolve(__dirname, 'dist'),
+        library: 'SimpleCrypto',
+        libraryExport: 'SimpleCrypto',
+        libraryTarget: 'umd',
     }
 };

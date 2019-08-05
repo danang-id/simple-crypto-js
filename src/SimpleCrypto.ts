@@ -1,7 +1,7 @@
 import { lib, PBKDF2, AES, pad, mode, enc } from 'crypto-js';
 import { WordArray, Encoder } from 'crypto-js';
 
-export default class SimpleCrypto {
+export class SimpleCrypto {
 
 	private _secret: string;
 	private readonly _keySize: number;
@@ -89,3 +89,5 @@ export default class SimpleCrypto {
 	}
 
 }
+
+export default SimpleCrypto;
