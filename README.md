@@ -66,7 +66,7 @@
 
 ## Getting Started
 
-This library is available through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrpyto.min.js).
+This library is available through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js).
 
 ### Installation
 
