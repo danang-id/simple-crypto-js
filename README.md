@@ -36,7 +36,11 @@
 
 ## Changes Log (What's New)
 
-**What's New in 2.1.2**
+**What's New in 2.1.3**
+
+* Fix jsDelivr link
+
+**Included from 2.1.2**
 
 * Update missing file in NPM release
 
