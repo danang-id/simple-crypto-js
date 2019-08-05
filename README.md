@@ -36,7 +36,7 @@
 
 ## Changes Log (What's New)
 
-**What's New in 2.1.0**
+**What's New in 2.1.1**
 
 * Update dependency
 * Fix missing web bundler as distribution build tool for the Web (using webpack)
