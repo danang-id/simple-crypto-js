@@ -57,3 +57,6 @@ typings/
 # Source and test file
 src
 test
+
+# Coveralls configuration
+.coveralls.yml
