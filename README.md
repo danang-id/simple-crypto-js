@@ -1,4 +1,4 @@
-# SimpleCrypto 2.0.2
+# SimpleCrypto
 
 
 [![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
@@ -15,7 +15,7 @@
 
 ## List of Contents
 
-* [SimpleCrypto 2.0.2](#simplecrypto-201)
+* [SimpleCrypto](#simplecrypto)
   * [List of Contents](#list-of-contents)
   * [Changes Log (What's New)](#changes-log-whats-new)
   * [Getting Started](#getting-started)
@@ -29,16 +29,23 @@
     * [Random Key Generator](#random-key-generator)
   * [Built With](#built-with)
   * [Contribution](#contribution)
-  * [Versioning](#versioning)
+  * [Version Management](#version-management)
   * [Authors](#authors)
   * [License](#license)
   * [Acknowledgments](#acknowledgments)
 
 ## Changes Log (What's New)
 
-**What's New in 2.0.2**
+**What's New in 2.1.0**
+
+* Update dependency
+* Fix missing web bundler as distribution build tool for the Web (using webpack)
+* Use of partial import instead of full import to minimise the size of distributed build file 
+
+**Included from 2.0.2**
 
 * Bugs fixed
+* Remove gulp
 
 **Included from 2.0.1**
 
@@ -55,7 +62,7 @@
 
 ## Getting Started
 
-This library is availabe through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and through [CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@2.0.2/src/SimpleCrypto.js).
+This library is available through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrpyto.min.js).
 
 ### Installation
 
@@ -109,9 +116,9 @@ List of **_SimpleCrypto_** functions.
 | ------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | _static_ **generateRandom()**                                 | Generate a random string based on the key length.                                      | _length_: number (optional) - The length of key used to generating random. (default: `128`) </br> _expectsWordArray_: boolean (optional) - If set to `true`, this function will return a `CryptoJS.WordArray` instance instead of string. (default: `false`)                                                                                          | _random_: string - Generated random key.                                                                         |
 | **encrypt()**                                                 | Encrypt data.                                                                          | **data**: object/string/number/boolean - The data to be encrypted.                                                                                                                                                                                                                                                                                    | _ciphered_: string - Ciphered data.                                                                              |
-| **decrypt()**                                                 | Decrypt ciphered data.                                                                 | **ciphered**: string - Ciphered data to be decrypted. </br> _expectsObject_: boolean (optional) - If set to `true`, this function will return an object instead of string. Set to `true` if decrypted data is expected as object. (default: `false`) </br> _enc_: string (optional) - Encoding method used to bring the data back. (default: `UTF-8`) | _data_: string/object - The decrypted data (it might be string or object, depends on `expectsObject` parameter). |
+| **decrypt()**                                                 | Decrypt ciphered data.                                                                 | **ciphered**: string - Ciphered data to be decrypted. </br> _expectsObject_: boolean (optional) - If set to `true`, this function will return an object instead of string. Set to `true` if decrypted data is expected as object. (default: `false`) </br> _encoder_: string (optional) - Encoder used transform data back to string. (default: `UTF-8`) | _data_: string/object - The decrypted data (it might be string or object, depends on `expectsObject` parameter). |
 | _deprecation_ **encryptObject()**</br>use `encrypt()` instead | Encrypt JavaScript object literal.                                                     | **object**: object - The object to be enrypted.                                                                                                                                                                                                                                                                                                       | _ciphered_: string - Ciphered data.                                                                              |
-| _deprecation_ **decryptObject()**</br>use `decrypt()` instead | Decrypt ciphered data that is expected as object and turn it back into object literal. | **ciphered**: string - Ciphered data to be decrypted. </br> _enc_: string (optional) - Encoding method used to bring the data back. (default: `UTF-8`)                                                                                                                                                                                                | _object_: object - The decrypted object.                                                                         |
+| _deprecation_ **decryptObject()**</br>use `decrypt()` instead | Decrypt ciphered data that is expected as object and turn it back into object literal. | **ciphered**: string - Ciphered data to be decrypted. </br> _encoder_: string (optional) - Encoder used transform data back to string. (default: `UTF-8`)                                                                                                                                                                                                | _object_: object - The decrypted object.                                                                         |
 | **setSecret()** | Change the secret of the instance. | **secret**: string - The new secret string.                                                                                                                                                                                                 | _void_                                                                        |
 
 Note:
@@ -172,7 +179,7 @@ console.log("... done.");
 
 ### Change the Secret Key
 
-If you want to change the secret key of a **_SimpleCrypto_** instance, call the `setSecret()` function with the new secret as paramter.
+If you want to change the secret key of a **_SimpleCrypto_** instance, call the `setSecret()` function with the new secret as parameter.
 
 ```javascript
 var simpleCrypto = new SimpleCrypto("some-unique-key");
@@ -222,15 +229,15 @@ Yes, and of course it is obvious, because it is a static function, you are not r
 
 ## Built With
 
-Written in [TypeScript](https://typscriptlang.org/), built into ECMAScript 5.
+Written in [TypeScript](https://typscriptlang.org/), built into ECMAScript 5 using the TypeScript compiler and webpack bundler.
 
 ## Contribution
 
 To contribute, simply fork this project, and issue a pull request.
 
-## Versioning
+## Version Management
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/danang-id/simple-crypto-js/tags).
+We use [SemVer](http://semver.org/) for version management. For the versions available, see the [tags on this repository](https://github.com/danang-id/simple-crypto-js/tags).
 
 ## Authors
 
