@@ -1,4 +1,3 @@
-import * as mocha from "mocha";
 import * as chai from "chai";
 
 import SimpleCrypto from "../src/SimpleCrypto";
@@ -31,7 +30,7 @@ describe("Random Generator", () => {
 
   it("expects random WordArray (using default key length)", () => {
     const usedKeyLength = keyLength.default;
-    const random = SimpleCrypto.generateRandom(usedKeyLength, true);
+    const random: any = SimpleCrypto.generateRandom(usedKeyLength, true);
     expect(random).to.be.a("object");
     expect(random).to.have.keys(["words", "sigBytes"]);
     expect(random["words"]).to.be.a("array");
@@ -41,7 +40,7 @@ describe("Random Generator", () => {
 
   it("expects random WordArray (using customised key length)", () => {
     const usedKeyLength = keyLength.custom;
-    const random = SimpleCrypto.generateRandom(usedKeyLength, true);
+    const random: any = SimpleCrypto.generateRandom(usedKeyLength, true);
     expect(random).to.be.a("object");
     expect(random).to.have.keys(["words", "sigBytes"]);
     expect(random["words"]).to.be.a("array");

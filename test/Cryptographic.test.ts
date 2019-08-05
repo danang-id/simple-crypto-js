@@ -1,11 +1,10 @@
-import * as mocha from "mocha";
 import * as chai from "chai";
 
 import SimpleCrypto from "../src/SimpleCrypto";
 
 const expect = chai.expect;
 const secretKey = SimpleCrypto.generateRandom();
-const instance = new SimpleCrypto(secretKey);
+const instance = new SimpleCrypto(secretKey.toString());
 
 const object = {
   SimpleCrypto: "is great.",
@@ -25,7 +24,7 @@ const plainExpectsString = instance.decrypt(cipherTextFromString);
 const plainExpectsNumber = instance.decrypt(cipherTextFromNumber);
 const plainExpectsBoolean = instance.decrypt(cipherTextFromBoolean);
 
-describe("Crpytographic: Encryption", () => {
+describe("Cryptographic: Encryption", () => {
   it("should be able to encrypt from object", () => {
     expect(cipherTextFromObject).to.be.a("string");
     expect(cipherTextFromObject).to.have.length(152);
@@ -51,7 +50,7 @@ describe("Crpytographic: Encryption", () => {
   });
 });
 
-describe("Crpytographic: Decrpytion", () => {
+describe("Cryptographic: Decryption", () => {
   it("should be able to decrypt to object", () => {
     expect(plainExpectsObject).to.be.a("object");
     expect(plainExpectsObject).to.be.eql(object);
