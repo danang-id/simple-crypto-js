@@ -1,6 +1,6 @@
 {
 	"name": "simple-crypto-js",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "Simplify AES encryption and decryption of any JavaScript objects, implementing crypto-js library.",
 	"repository": "https://github.com/danang-id/simple-crypto-js.git",
 	"homepage": "https://github.com/danang-id/simple-crypto-js",
@@ -8,7 +8,8 @@
 	"license": "MIT",
 	"main": "build/SimpleCrypto.js",
 	"files": [
-		"build/*"
+		"build/*",
+		"dist/*"
 	],
 	"scripts": {
 		"build": "tsc -p tsconfig.json",
