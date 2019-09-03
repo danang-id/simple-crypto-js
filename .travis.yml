@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - "node"
 script:
-  - npm run test
   - npm run build
   - npm run dist
 after_success: npm run coverage
