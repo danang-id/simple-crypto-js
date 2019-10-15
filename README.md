@@ -149,7 +149,7 @@ var simpleCrypto2 = new SimpleCrypto(_secretKey);
 
 var plainText = "Hello World!";
 // Encryption using the first instance (simpleCrypto1)
-var chiperText = simpleCrypto1.encrypt(plainText);
+var cipherText = simpleCrypto1.encrypt(plainText);
 console.log("Encryption process...");
 console.log("Plain Text    : " + plainText);
 console.log("Cipher Text   : " + cipherText);
