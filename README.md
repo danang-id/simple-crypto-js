@@ -182,7 +182,7 @@ To encrypt and decrypt JavaScript object literal, simply use `encrypt()` and `de
 var _secretKey = SimpleCrypto.generateRandom();
 var simpleCrypto = new SimpleCrypto(_secretKey);
 
-var object = {
+var plainObject = {
   SimpleCrypto: "is great.",
   You: "should try it!"
 };
