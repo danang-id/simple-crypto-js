@@ -128,7 +128,7 @@ var _secretKey = "some-unique-key";
 var simpleCrypto = new SimpleCrypto(_secretKey);
 
 var plainText = "Hello World!";
-var chiperText = simpleCrypto.encrypt(plainText);
+var cipherText = simpleCrypto.encrypt(plainText);
 console.log("Encryption process...");
 console.log("Plain Text    : " + plainText);
 console.log("Cipher Text   : " + cipherText);
