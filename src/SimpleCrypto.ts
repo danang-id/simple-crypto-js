@@ -1,4 +1,4 @@
-import { lib, PBKDF2, AES, pad, mode, enc } from 'crypto-js';
+import { lib, PBKDF2, AES, pad, mode, enc, HmacSHA256, SHA256 } from 'crypto-js';
 import { WordArray, Encoder } from 'crypto-js';
 
 export class SimpleCrypto {
@@ -39,17 +39,30 @@ export class SimpleCrypto {
 			throw new Error('Only object, string, number and boolean data types that can be encrypted.');
 		}
 		const salt: string | WordArray = SimpleCrypto.generateRandom(128, true);
-		const key: WordArray = PBKDF2(this._secret, salt, {
+		
+		// SHA256 the __secret. Secret should not be stored in plaintext and should always
+		// be operated upon after hashing it.
+		const hashedSecret: WordArray = SHA256(this._secret)
+
+		const key: WordArray = PBKDF2(hashedSecret.toString(), salt, {
 			keySize: this._keySize / 32,
 			iterations: this._iterations
 		});
+
 		const initialVector: string | WordArray = SimpleCrypto.generateRandom(128, true);
 		const encrypted: WordArray = AES.encrypt(string, key, {
 			iv: initialVector as string,
 			padding: pad.Pkcs7,
 			mode: mode.CBC
 		});
-		return salt.toString() + initialVector.toString() + encrypted.toString();
+
+		// Combining the encrypted string with salt and IV to form ciphertext
+		const ctxt = salt.toString() + initialVector.toString() + encrypted.toString();
+
+		// Generate authentication tag and append that to the ciphertext using the key derived from PBKDF2.
+		// (Optional TODO: Include a module to generate authentication key. Possibly HKDF-SHA256.)
+		const hashedCtxt = HmacSHA256(ctxt, key).toString();
+		return ctxt + hashedCtxt;
 	}
 
 	public decrypt(
@@ -60,18 +73,34 @@ export class SimpleCrypto {
 		if (ciphered == void 0) {
 			throw new Error('No encrypted string was attached to be decrypted. Decryption halted.');
 		}
+
 		const salt: string = enc.Hex.parse(ciphered.substr(0, 32));
 		const initialVector: string = enc.Hex.parse(ciphered.substr(32, 32));
-		const encrypted: string = ciphered.substring(64);
-		const key: string | WordArray = PBKDF2(this._secret, salt, {
+		const encrypted: string = ciphered.substring(64, ciphered.length-64);
+		
+		// SHA256 the __secret
+		const hashedSecret: WordArray = SHA256(this._secret)
+
+		const key: string | WordArray = PBKDF2(hashedSecret.toString(), salt, {
 			keySize: this._keySize / 32,
 			iterations: this._iterations
 		});
+
+		// Before decryption, we need to authenticate using the MAC attached
+		const hmac = ciphered.substring(ciphered.length-64);
+		const ctxt = ciphered.substring(0,ciphered.length-64);
+		
+		if (hmac != HmacSHA256(ctxt, key).toString())
+		{
+			throw new Error('Invalid encrypted text recieved. Please try again.');
+		}
+		
 		const decrypted = AES.decrypt(encrypted, key, {
 			iv: initialVector,
 			padding: pad.Pkcs7,
 			mode: mode.CBC
 		});
+
 		return expectsObject ? JSON.parse(decrypted.toString(encoder)) : decrypted.toString(encoder);
 	}
 
