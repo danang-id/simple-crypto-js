@@ -27,25 +27,25 @@ const plainExpectsBoolean = instance.decrypt(cipherTextFromBoolean);
 describe("Cryptographic: Encryption", () => {
   it("should be able to encrypt from object", () => {
     expect(cipherTextFromObject).to.be.a("string");
-    expect(cipherTextFromObject).to.have.length(152);
+    expect(cipherTextFromObject).to.have.length(216);
     expect(cipherTextFromObject.substr(150, 2)).to.be.equals("==");
   });
 
   it("should be able to encrypt from string", () => {
     expect(cipherTextFromString).to.be.a("string");
-    expect(cipherTextFromString).to.have.length(108);
+    expect(cipherTextFromString).to.have.length(172);
     expect(cipherTextFromString.substr(107, 1)).to.be.equals("=");
   });
 
   it("should be able to encrypt from number", () => {
     expect(cipherTextFromNumber).to.be.a("string");
-    expect(cipherTextFromNumber).to.have.length(88);
+    expect(cipherTextFromNumber).to.have.length(152);
     expect(cipherTextFromNumber.substr(86, 2)).to.be.equals("==");
   });
 
   it("should be able to encrypt from boolean", () => {
     expect(cipherTextFromBoolean).to.be.a("string");
-    expect(cipherTextFromBoolean).to.have.length(88);
+    expect(cipherTextFromBoolean).to.have.length(152);
     expect(cipherTextFromBoolean.substr(86, 2)).to.be.equals("==");
   });
 });
