@@ -4,4 +4,4 @@ node_js:
 script:
   - npm run build
   - npm run dist
-after_success: npm run coverage
+after_success: npm test && npm run coverage
