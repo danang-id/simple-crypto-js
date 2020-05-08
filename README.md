@@ -36,12 +36,17 @@
 
 ## Changes Log (What's New)
 
+**What's New in 2.3.1**
+
+* Fix npm dependencies security audit.
+
 **What's New in 2.3.0**
 
 * Fix chosen cipher text attacks vulnerability (thanks [@paragonie-scott](https://github.com/paragonie-scott) and [@adi928](https://github.com/adi928)).
-* Fix security risk in dependencies by upgrading them.
+* Upgrade [crypto-js](https://github.com/brix/crypto-js) to version 4.0.0.
+* Fix security risk in dev dependencies by upgrading them.
 
-For full changelog, please refers to [CHANGELOG](CHANGELOG.md) file.
+For full change-log, please refer to [CHANGELOG](CHANGELOG.md) file.
 
 ## Getting Started
 
