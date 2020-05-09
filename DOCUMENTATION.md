@@ -1,4 +1,4 @@
-# SimpleCrypto
+# SimpleCrypto‘
 
 [![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
 [![Build Status](https://travis-ci.org/danang-id/simple-crypto-js.svg?branch=master)](https://travis-ci.org/danang-id/simple-crypto-js) 
@@ -40,7 +40,7 @@ var SimpleCrypto = require("simple-crypto-js").default
 
 ## Documentation
 
-**_SimpleCrypto_** has a very few and simple functions, but powerful. The ful list of all APIs and how to use those APIs are [available here](https://simplecrypto.js.org/docs/SimpleCrypto.ts.html).
+**_SimpleCrypto_** has a very few and simple functions, but powerful. The ful list of all APIs and how to use those APIs are [available here](https://simplecrypto.js.org/docs/SimpleCrypto.html).
 
 ## Examples
 
