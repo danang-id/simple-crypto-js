@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SimpleCrypto Documentation Home</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">SimpleCrypto Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="SimpleCrypto.html">SimpleCrypto</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Title</p>
+                    <h1>Home</h1>
+                </header>
+                
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>SimpleCrypto</h1>
+<p><a href="https://github.com/danang-id/simple-crypto-js/releases"><img src="https://img.shields.io/github/release/danang-id/simple-crypto-js.svg" alt="GitHub Release"></a>
+<a href="https://travis-ci.org/danang-id/simple-crypto-js"><img src="https://travis-ci.org/danang-id/simple-crypto-js.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/danang-id/simple-crypto-js?branch=master"><img src="https://coveralls.io/repos/github/danang-id/simple-crypto-js/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies"><img src="https://img.shields.io/david/danang-id/simple-crypto-js.svg" alt="Dependencies Status"></a>
+<a href="https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies"><img src="https://img.shields.io/david/dev/danang-id/simple-crypto-js.svg" alt="DevDependencies Status"></a></p>
+<p><a href="https://www.npmjs.com/package/simple-crypto-js?activeTab=versions"><img src="https://img.shields.io/npm/v/simple-crypto-js.svg" alt="NPM Version"></a>
+<a href="#license"><img src="https://img.shields.io/npm/l/simple-crypto-js.svg" alt="License"></a>
+<a href="https://www.npmjs.com/package/simple-crypto-js"><img src="https://img.shields.io/npm/dm/simple-crypto-js.svg" alt="Monthly Downloads"></a></p>
+<p><strong><em>SimpleCrypto</em></strong> is a JavaScript library that simplify the process of encryption and decryption of JavaScript objects, as simple as just calling <code>encrypt()</code> and <code>decrypt()</code> function. This library implements brix's <a href="https://github.com/brix/crypto-js">crypto-js</a> library. This library is pure JavaScript library built with TypeScript targeting CommonJS ECMAScript 5 (ES5), so it is compatible with most NodeJS back-end applications or JavaScript front-end (client browser).</p>
+<h2>Getting Started</h2>
+<p>This library is available through package manager (<a href="https://www.npmjs.org/">npm</a> and <a href="https://www.yarnpkg.com/">yarn</a>) and through <a href="https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js">jsDelivr CDN</a>.</p>
+<pre class="prettyprint source lang-bash"><code># If you're using NPM
+npm install --save simple-crypto-js
+
+# If you're using Yarn
+yarn add simple-crypto-js
+</code></pre>
+<p>Then, include <strong><em>SimpleCrypto</em></strong> your project. If you are using the new ECMAScript 6 (ECMAScript 2015) and later, you may use the new import statement:</p>
+<pre class="prettyprint source lang-javascript"><code>// ES6 and later
+import SimpleCrypto from &quot;simple-crypto-js&quot;
+</code></pre>
+<p>However, if you are using ECMAScript 5 and older, use the require statement:</p>
+<pre class="prettyprint source lang-javascript"><code>// ES5 and older
+var SimpleCrypto = require(&quot;simple-crypto-js&quot;).default
+</code></pre>
+<h2>Documentation</h2>
+<p><strong><em>SimpleCrypto</em></strong> has a very few and simple functions, but powerful. The ful list of all APIs and how to use those APIs are <a href="https://simplecrypto.js.org/docs/SimpleCrypto.ts.html">available here</a>.</p>
+<h2>Examples</h2>
+<p>All these examples work on ECMAScript 5 or newer.</p>
+<h3>Using <code>encrypt()</code> and <code>decrypt()</code></h3>
+<p>To use <strong><em>SimpleCrypto</em></strong>, first create a <strong><em>SimpleCrypto</em></strong> instance with a secret key (password). Secret key parameter <strong>MUST be defined</strong> when creating a <strong><em>SimpleCrypto</em></strong> instance.</p>
+<p>To encrypt and decrypt data, simply use <code>encrypt()</code> and <code>decrypt()</code> function from an instance. This will use AES-CBC encryption algorithm.</p>
+<pre class="prettyprint source lang-javascript"><code>// If you would like to generate a random unique key, you may use static function generateRandom() like so
+// const _secretKey = SimpleCrypto.generateRandom()
+// You may also set the strength of the random key, as example 256 (default is 128)
+// const _secretKey = SimpleCrypto.generateRandom(256)
+// Or just defined the key by yourself (key is must!)
+const secretKey = &quot;some-unique-key&quot;
+
+const simpleCrypto = new SimpleCrypto(secretKey)
+
+const plainText = &quot;Hello World!&quot;
+const cipherText = simpleCrypto.encrypt(plainText)
+console.log(&quot;Encryption process...&quot;)
+console.log(&quot;Plain Text    : &quot; + plainText)
+console.log(&quot;Cipher Text   : &quot; + cipherText)
+const decipherText = simpleCrypto.decrypt(cipherText)
+console.log(&quot;... and then decryption...&quot;)
+console.log(&quot;Decipher Text : &quot; + decipherText)
+console.log(&quot;... done.&quot;)
+</code></pre>
+<h3>Working on Multiple Instances</h3>
+<p>You could also perform the encryption and decryption process using different <strong><em>SimpleCrypto</em></strong> instances, <strong>PROVIDED THAT the secret key ARE STAY THE SAME between the instances</strong>. For example:</p>
+<pre class="prettyprint source lang-javascript"><code>const secretKey = &quot;some-unique-key&quot;
+const anotherSecretKey = &quot;another-unique-key&quot;
+const simpleCrypto1 = new SimpleCrypto(secretKey)
+const simpleCrypto2 = new SimpleCrypto(secretKey)
+
+const plainText = &quot;Hello World!&quot;
+// Encryption using the first instance (simpleCrypto1)
+const cipherText = simpleCrypto1.encrypt(plainText)
+console.log(&quot;Encryption process...&quot;)
+console.log(&quot;Plain Text    : &quot; + plainText)
+console.log(&quot;Cipher Text   : &quot; + cipherText)
+// Decryption using the second instance (simpleCrypto2)
+const decipherText = simpleCrypto2.decrypt(cipherText)
+console.log(&quot;... and then decryption...&quot;)
+console.log(&quot;Decipher Text : &quot; + decipherText)
+console.log(&quot;... done.&quot;)
+// Decryption using DIFFERENT secret key
+const failedDecipheredText = simpleCrypto2.setSecret(anotherSecretKey)
+    .decrypt(cipherText) // Will FAIL because of different secretKey
+</code></pre>
+<h3>Updating or Appending Plain Data/Cipher Text</h3>
+<p>With SimpleCrypto version 2.4.0 onward, you are now able to update or append the data buffer, before you start the encryption or decryption process.</p>
+<pre class="prettyprint source lang-javascript"><code>const secretKey = &quot;some-unique-key&quot;
+const simpleCrypto = new SimpleCrypto(secretKey)
+
+const greeting = &quot;Hello!&quot;
+const plainText = &quot;SimpleCrypto is great.&quot;
+// Calls update() will change the data buffer entirely
+simpleCrypto.update(greeting) // dataBuffer = &quot;Hello!&quot;
+// Calls append() to append the data buffer 
+simpleCrypto.append(&quot; &quot;) // dataBuffer = &quot;Hello! &quot;
+simpleCrypto.append(plainText) // dataBuffer = &quot;Hello! SimpleCrypto is great.&quot;
+// Finally calls encrypt() to do the encryption
+const cipherText = simpleCrypto.encrypt()
+console.log(&quot;Encryption process...&quot;)
+console.log(&quot;Plain Text    : &quot; + plainText)
+console.log(&quot;Cipher Text   : &quot; + cipherText)
+
+// Cut the cipherText string into to tow pieces
+const halfLength = Math.ceil(cipherText.length / 2)
+const cipherTexts = [ cipherText.substr(0, halfLength), cipherText.substr(halfLength) ]
+// Instead calling the append() and update() one by one, you call also linking call it.
+const decipherText = simpleCrypto.update(cipherTexts[0])
+    .append(cipherTexts[1])
+    .decrypt()
+console.log(&quot;... and then decryption...&quot;)
+console.log(&quot;Decipher Text : &quot; + decipherText)
+console.log(&quot;... done.&quot;)
+</code></pre>
+<h3>Change the Secret Key</h3>
+<p>If you want to change the secret key of a <strong><em>SimpleCrypto</em></strong> instance, call the <code>setSecret()</code> function with the new secret as parameter.</p>
+<pre class="prettyprint source lang-javascript"><code>const simpleCrypto = new SimpleCrypto(&quot;some-unique-key&quot;)
+simpleCrypto.setSecret(&quot;new-more-unique-key&quot;)
+</code></pre>
+<h3>Object, String, Number and Boolean Encryption</h3>
+<p>Encryption and decryption in JavaScript has never been simpler than this.</p>
+<p>Simply use <code>encrypt()</code> and <code>decrypt()</code> functions from an instance, and it will transform your data to its proper type, back and forth without hassle.</p>
+<pre class="prettyprint source lang-javascript"><code>const _secretKey = SimpleCrypto.generateRandom()
+const simpleCrypto = new SimpleCrypto(_secretKey)
+
+const plainObject = {
+  SimpleCrypto: &quot;is great.&quot;,
+  You: &quot;should try it!&quot;
+}
+const plainString = &quot;Hello from SimpleCrypto!&quot;
+const plainNumber = 65347
+const plainBoolean = false
+const encryptedObject = simpleCrypto.encrypt(plainObject)
+const encryptedString = simpleCrypto.encrypt(plainString)
+const encryptedNumber = simpleCrypto.encrypt(plainNumber)
+const encryptedBoolean = simpleCrypto.encrypt(plainBoolean)
+console.log(&quot;Plain Object     : &quot; + plainObject)
+console.log(&quot;Encrypted Object : &quot; + encryptedObject)
+console.log(&quot;Plain String     : &quot; + plainString)
+console.log(&quot;Encrypted String : &quot; + encryptedString)
+console.log(&quot;Plain Number     : &quot; + plainNumber)
+console.log(&quot;Encrypted Number : &quot; + encryptedNumber)
+console.log(&quot;Plain Boolean    : &quot; + plainBoolean)
+console.log(&quot;Encrypted Boolean: &quot; + encryptedBoolean)
+// decrypt() function will automatically detects and returns data with the proper data type
+const decryptedObject = simpleCrypto.decrypt(encryptedObject) 
+const decryptedString = simpleCrypto.decrypt(encryptedString) 
+const decryptedNumber = simpleCrypto.decrypt(encryptedNumber) 
+const decryptedBoolean = simpleCrypto.decrypt(encryptedBoolean) 
+console.log(&quot;Decrypted Object : &quot; + decryptedObject)
+console.log(&quot;Type of Object   : &quot; + typeof decryptedObject) // &quot;object&quot;
+console.log(&quot;Decrypted String : &quot; + decryptedString)
+console.log(&quot;Type of String   : &quot; + typeof decryptedString) // &quot;string&quot;
+console.log(&quot;Decrypted Number : &quot; + decryptedNumber)
+console.log(&quot;Type of Number   : &quot; + typeof decryptedNumber) // &quot;number&quot;
+console.log(&quot;Decrypted Boolean : &quot; + decryptedBoolean)
+console.log(&quot;Type of Boolean   : &quot; + typeof decryptedBoolean) // &quot;boolean&quot;
+</code></pre>
+<p>Prior to version 2.0.0, you may use <code>encryptObject()</code> and <code>decryptObject()</code> function. These functions are in <code>deprecation</code> and soon would be gone in future release.</p>
+<h3>Random Generator</h3>
+<p>Anywhere, after importing <strong><em>SimpleCrypto</em></strong>, you may use static function <code>generateRandom()</code>, <code>generateRandomString()</code>, or <code>generateRandomWordArray()</code> to produce a random based on the length you have provided on the parameter (default is <code>128</code>). This is useful if you would like to provide a random key.</p>
+<pre class="prettyprint source lang-javascript"><code>const random = SimpleCrypto.generateRandom()
+const randomCustomLength = SimpleCrypto.generateRandom(256)
+const randomWordArrayCustomLength = SimpleCrypto.generateRandom(256, true)
+</code></pre>
+<p>Yes, and of course it is obvious, because it is a static function, you are not required to create any SimpleCrypto instances.</p></article>
+    </section>
+
+
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>
