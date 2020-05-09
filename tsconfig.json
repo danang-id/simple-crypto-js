@@ -5,7 +5,7 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "declaration": true,
-    "outDir": "build",
+    "outDir": "lib",
     "esModuleInterop": true
   },
   "include": [
