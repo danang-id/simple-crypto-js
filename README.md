@@ -1,6 +1,5 @@
 # SimpleCrypto
 
-
 [![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
 [![Build Status](https://travis-ci.org/danang-id/simple-crypto-js.svg?branch=master)](https://travis-ci.org/danang-id/simple-crypto-js) 
 [![Coverage Status](https://coveralls.io/repos/github/danang-id/simple-crypto-js/badge.svg?branch=master)](https://coveralls.io/github/danang-id/simple-crypto-js?branch=master)
@@ -17,16 +16,9 @@
 
 * [SimpleCrypto](#simplecrypto)
   * [List of Contents](#list-of-contents)
-  * [Changes Log (What's New)](#changes-log-whats-new)
+  * [What's New?](#whats-new)
   * [Getting Started](#getting-started)
-    * [Installation](#installation)
-  * [Documentation](#documentation)
-    * [SimpleCrypto Class](#simplecrypto-class)
-    * [Using `encrypt()` and `decrypt()`](#using-encrypt-and-decrypt)
-    * [Working on Multiple Instances](#working-on-multiple-instances)
-    * [Change the Secret Key](#change-the-secret-key)
-    * [Object Encryption](#object-encryption)
-    * [Random Key Generator](#random-key-generator)
+  * [How to Use SimpleCrypto](#how-to-use-simplecrypto)
   * [Built With](#built-with)
   * [Contribution](#contribution)
   * [Version Management](#version-management)
@@ -34,27 +26,22 @@
   * [License](#license)
   * [Acknowledgments](#acknowledgments)
 
-## Changes Log (What's New)
+## What's New?
 
-**What's New in 2.3.1**
+**What's New in 2.4.0**
 
-* Fix npm dependencies security audit.
-
-**What's New in 2.3.0**
-
-* Fix chosen cipher text attacks vulnerability (thanks [@paragonie-scott](https://github.com/paragonie-scott) and [@adi928](https://github.com/adi928)).
-* Upgrade [crypto-js](https://github.com/brix/crypto-js) to version 4.0.0.
-* Fix security risk in dev dependencies by upgrading them.
+* Added data type detection. Decryption process will now return data with its proper data type. For now, object, string, number and boolean are supported.
+* Added `append()` and `update()` functions, both to append and update the data buffer respectively.
+* Added overload functions for `decrpyt()` and `encrypt()`.
+* Added initial support for encoding (see static variable `SimpleCrypto.encoders`). However, for now, it only supports UTF-8 even if you set another encoder.
+* Added chaining functions support. Functions that initially have no return, like `append()`, `update()`, `setSecret()`, `setEncoder()`, now will returning its instance.
+* Added static function `SimpleCrypto.generateRandomString()` and `SimpleCrypto.generateRandomWordArray()`.
 
 For full change-log, please refer to [CHANGELOG](CHANGELOG.md) file.
 
 ## Getting Started
 
 This library is available through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js).
-
-### Installation
-
-To get this library included on your project, first, you can use package manager like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/) command to get **_SimpleCrypto_**.
 
 ```bash
 # If you're using NPM
@@ -68,152 +55,19 @@ Then, include **_SimpleCrypto_** your project. If you are using the new ECMAScri
 
 ```javascript
 // ES6 and later
-import SimpleCrypto from "simple-crypto-js";
+import SimpleCrypto from "simple-crypto-js"
 ```
 
 However, if you are using ECMAScript 5 and older, use the require statement:
 
 ```javascript
 // ES5 and older
-var SimpleCrypto = require("simple-crypto-js").default;
+var SimpleCrypto = require("simple-crypto-js").default
 ```
 
-## Documentation
+## How to Use SimpleCrypto
 
-**_SimpleCrypto_** has a single class with only two instance's functions and a single static function. This is by intention to keep its simplicity. This is full documentation about the library and how to use it on your project. All examples work on both ECMAScript 6 (and later) and ECMAScript 5 (and older).
-
-### SimpleCrypto Class
-
-List of **_SimpleCrypto_** constructor parameter.
-
-| Parameter | Type     | Information                                                                                                           | Default     |
-| --------- | -------- | --------------------------------------------------------------------------------------------------------------------- | ----------- |
-| _secret_  | required | The secret string (key or password) that will be used to create the secret key for encryption and decryption process. | _undefined_ |
-
-List of **_SimpleCrypto_** instance's properties.
-
-| Property       | Information                                                                                                                    | Default     |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| \__secret_     | Contains the secret string (key or password) that will be used to create the secret key for encryption and decryption process. | _undefined_ |
-| \__keySize_    | Contains a number that represent the size of the secret key.                                                                   | 256         |
-| \__iterations_ | Contains a number that represent the number of iterations done to create the secret key.                                       | 100         |
-
-List of **_SimpleCrypto_** functions.
-
-| Functions                                                     | Information                                                                            | Parameter                                                                                                                                                                                                                                                                                                                                             | Return                                                                                                           |
-| ------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| _static_ **generateRandom()**                                 | Generate a random string based on the key length.                                      | _length_: number (optional) - The length of key used to generating random. (default: `128`) </br> _expectsWordArray_: boolean (optional) - If set to `true`, this function will return a `CryptoJS.WordArray` instance instead of string. (default: `false`)                                                                                          | _random_: string - Generated random key.                                                                         |
-| **encrypt()**                                                 | Encrypt data.                                                                          | **data**: object/string/number/boolean - The data to be encrypted.                                                                                                                                                                                                                                                                                    | _ciphered_: string - Ciphered data.                                                                              |
-| **decrypt()**                                                 | Decrypt ciphered data.                                                                 | **ciphered**: string - Ciphered data to be decrypted. </br> _expectsObject_: boolean (optional) - If set to `true`, this function will return an object instead of string. Set to `true` if decrypted data is expected as object. (default: `false`) </br> _encoder_: string (optional) - Encoder used transform data back to string. (default: `UTF-8`) | _data_: string/object - The decrypted data (it might be string or object, depends on `expectsObject` parameter). |
-| _deprecation_ **encryptObject()**</br>use `encrypt()` instead | Encrypt JavaScript object literal.                                                     | **object**: object - The object to be enrypted.                                                                                                                                                                                                                                                                                                       | _ciphered_: string - Ciphered data.                                                                              |
-| _deprecation_ **decryptObject()**</br>use `decrypt()` instead | Decrypt ciphered data that is expected as object and turn it back into object literal. | **ciphered**: string - Ciphered data to be decrypted. </br> _encoder_: string (optional) - Encoder used transform data back to string. (default: `UTF-8`)                                                                                                                                                                                                | _object_: object - The decrypted object.                                                                         |
-| **setSecret()** | Change the secret of the instance. | **secret**: string - The new secret string.                                                                                                                                                                                                 | _void_                                                                        |
-
-Note:
-
-1.  Function marked with _static_ indicating a static function.
-2.  Function marked with _deprecation_ indicating deprecated function that still can be used. However, it would be deprecated (and fully gone) in the future version.
-3.  Function marked with _deprecated_ indicating deprecated function that has been removed in this version of release.
-4.  The rest (not marked with anything) are the normal instance's functions.
-
-### Using `encrypt()` and `decrypt()`
-
-To use **_SimpleCrypto_**, first create a **_SimpleCrypto_** instance with a secret key (password). Secret key parameter **MUST be defined** when creating a **_SimpleCrypto_** instance.
-
-To encrypt and decrypt data, simply use `encrypt()` and `decrypt()` function from an instance. This will use AES-CBC encryption algorithm.
-
-```javascript
-// If you would like to generate a random unique key, you may use static function generateRandom() like so
-// const _secretKey = SimpleCrypto.generateRandom();
-// You may also set the strength of the random key, as example 256 (default is 128);
-// const _secretKey = SimpleCrypto.generateRandom(256);
-// Or just defined the key by yourself (key is must!)
-const _secretKey = "some-unique-key";
-
-const simpleCrypto = new SimpleCrypto(_secretKey);
-
-const plainText = "Hello World!";
-const cipherText = simpleCrypto.encrypt(plainText);
-console.log("Encryption process...");
-console.log("Plain Text    : " + plainText);
-console.log("Cipher Text   : " + cipherText);
-const decipherText = simpleCrypto.decrypt(cipherText);
-console.log("... and then decryption...");
-console.log("Decipher Text : " + decipherText);
-console.log("... done.");
-```
-
-### Working on Multiple Instances
-
-You could also perform the encryption and decryption process using different **_SimpleCrypto_** instances, **PROVIDED THAT the secret key ARE STAY THE SAME between the instances**. For example:
-
-```javascript
-const _secretKey = "some-unique-key";
-const simpleCrypto1 = new SimpleCrypto(_secretKey);
-const simpleCrypto2 = new SimpleCrypto(_secretKey);
-
-const plainText = "Hello World!";
-// Encryption using the first instance (simpleCrypto1)
-const cipherText = simpleCrypto1.encrypt(plainText);
-console.log("Encryption process...");
-console.log("Plain Text    : " + plainText);
-console.log("Cipher Text   : " + cipherText);
-// Decryption using the second instance (simpleCrypto2)
-const decipherText = simpleCrypto2.decrypt(cipherText);
-console.log("... and then decryption...");
-console.log("Decipher Text : " + decipherText);
-console.log("... done.");
-```
-
-### Change the Secret Key
-
-If you want to change the secret key of a **_SimpleCrypto_** instance, call the `setSecret()` function with the new secret as parameter.
-
-```javascript
-const simpleCrypto = new SimpleCrypto("some-unique-key");
-simpleCrypto.setSecret("new-more-unique-key");
-```
-
-On version 1.1.1 and before, you may programmatically get and set the secret using it's `secret` property. However, since version 2.0, direct access to instance's properties are deprecated. You can't get the `secret` property programmatically, but still allowed to re-set the secret using the `setSecret()` function.
-
-### Object Encryption
-
-Encryption and decryption of JavaScript object literal has never been simpler than this. 
-
-To encrypt and decrypt JavaScript object literal, simply use `encrypt()` and `decrypt()` function from an instance. This will use AES-CBC encryption algorithm.
-
-
-```javascript
-const _secretKey = SimpleCrypto.generateRandom();
-const simpleCrypto = new SimpleCrypto(_secretKey);
-
-const plainObject = {
-  SimpleCrypto: "is great.",
-  You: "should try it!"
-};
-const encrypted = simpleCrypto.encrypt(plainObject);
-console.log("Encryption process...");
-console.log("Plain Object     : " + plainObject);
-console.log("Encrypted Object : " + encrypted);
-// Set the second parameter to true, then it will return object instead of string
-const decrypted = simpleCrypto.decrypt(encrypted, true);
-console.log("... and then decryption...");
-console.log("Decrypted object : " + decrypted);
-console.log("... done.");
-```
-
-On version 1.1.1 and before, you might have use `encryptObject()` and `decryptObject()` function. In version 2.0, this function is in `deprecation` and soon would be gone in future release. This is because our goal is to keep the simplicity and a single function is enough to do encryption or decryption process.
-
-### Random Key Generator
-
-Anywhere, after importing **_SimpleCrypto_**, you may use static function `generateRandom()` to produce a random key based on the length of key you have provided on the parameter (default is `128`).
-
-```javascript
-const randomString = SimpleCrypto.generateRandom();
-const randomStringCustomKey = SimpleCrypto.generateRandom(256);
-```
-
-Yes, and of course it is obvious, because it is a static function, you are not required to create any SimpleCrypto instances.
+Full documentation about **_SimpleCrypto_** API is [available here](docs).
 
 ## Built With
 
@@ -221,7 +75,15 @@ Written in [TypeScript](https://typscriptlang.org/), built into ECMAScript 5 usi
 
 ## Contribution
 
-To contribute, simply fork this project, and issue a pull request.
+To contribute, simply fork this project, and issue a pull request. However, before issuing a pull request, you have to make sure that your changes will not break current API, its parameter and its expected output.
+
+You may test your changes by running the test script.
+
+```bash
+npm run test
+```
+
+If all tests were passed, you are good to go.
 
 ## Version Management
 

@@ -1,5 +1,14 @@
 ## Changes Log (What's New)
 
+**What's New in 2.4.0**
+
+* Added data type detection. Decryption process will now return data with its proper data type. For now, object, string, number and boolean are supported.
+* Added `append()` and `update()` functions, both to append and update the data buffer respectively.
+* Added overload functions for `decrpyt()` and `encrypt()`.
+* Added initial support for encoding (see static variable `SimpleCrypto.encoders`). However, for now, it only supports UTF-8 even if you set another encoder.
+* Added chaining functions support. Functions that initially have no return, like `append()`, `update()`, `setSecret()`, `setEncoder()`, now will returning its instance.
+* Added static function `SimpleCrypto.generateRandomString()` and `SimpleCrypto.generateRandomWordArray()`.
+
 **What's New in 2.3.1**
 
 * Fix npm dependencies security audit.
