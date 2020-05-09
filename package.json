@@ -8,8 +8,11 @@
 	"license": "MIT",
 	"main": "lib/SimpleCrypto.js",
 	"files": [
+		"dist/*",
+		"docs/*",
 		"lib/*",
-		"dist/*"
+		"DOCUMENTATION.md",
+		"SECURITY.md"
 	],
 	"scripts": {
 		"docs": "rimraf docs && jsdoc --configure jsdoc.json",
