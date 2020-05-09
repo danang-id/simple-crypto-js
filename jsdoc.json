@@ -1,0 +1,48 @@
+{
+	"plugins": [
+		"node_modules/better-docs/typescript"
+	],
+	"source": {
+		"include": [ "src" ],
+		"exclude": [
+			"dist",
+			"lib",
+			"node_modules",
+			"scripts",
+			"test"
+		],
+		"includePattern": "\\.(ts|tsx)$"
+	},
+	"sourceType": "module",
+	"opts": {
+		"destination": "docs",
+		"readme": "DOCUMENTATION.md",
+		"recurse": true,
+		"template": "node_modules/better-docs"
+	},
+	"tags": {
+		"allowUnknownTags": ["optional"]
+	},
+	"templates": {
+		"better-docs": {
+			"name": "SimpleCrypto Documentation",
+			"title": "SimpleCrypto Documentation",
+			"hideGenerator": false,
+			"navigation": [
+				{
+					"label": "GitHub",
+					"href": "https://github.com/danang-id/simple-crypto-js"
+				},
+				{
+					"label": "NPM",
+					"href": "https://www.npmjs.com/package/simple-crypto-js"
+				}
+			]
+		},
+		"default": {
+			"outputSourceFiles": false,
+			"search": true
+		},
+		"search": true
+	}
+}
