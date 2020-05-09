@@ -1,23 +1,24 @@
 {
 	"name": "simple-crypto-js",
-	"version": "2.3.1",
+	"version": "2.4.0",
 	"description": "Simplify AES encryption and decryption of any JavaScript objects, implementing crypto-js library.",
 	"repository": "https://github.com/danang-id/simple-crypto-js.git",
 	"homepage": "https://simplecrypto.js.org/",
 	"author": "Danang Galuh Tegar Prasetyo <danang.galuh.t@outlook.com> (https://github.com/danang-id)",
 	"license": "MIT",
-	"main": "build/SimpleCrypto.js",
+	"main": "lib/SimpleCrypto.js",
 	"files": [
-		"build/*",
+		"lib/*",
 		"dist/*"
 	],
 	"scripts": {
+		"docs": "rimraf docs && jsdoc --configure jsdoc.json",
 		"build": "tsc -p tsconfig.json",
 		"dist": "webpack --config webpack.config.js && ts-node scripts/minify.ts",
 		"test": "cross-env NODE_ENV=test nyc mocha 'test/**/*.test.ts'",
 		"test:watch": "cross-env NODE_ENV=test nyc mocha --watch 'test/**/*.test.ts'",
 		"coverage": "cross-env NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
-		"clean": "rimraf build dist"
+		"clean": "rimraf dist lib"
 	},
 	"dependencies": {
 		"crypto-js": "^4.0.0"
