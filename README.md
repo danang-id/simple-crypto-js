@@ -49,14 +49,23 @@ To get started, add SimpleCrypto script to your HTML page.
 
 ```html
 <head>
-    <script async="" src="//cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js"></script>
+    <!-- Another line -->
+    <script src="//cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js"></script>
+    <!-- Another line -->
 </head>
 ```
 
 Then, your script section, you may use `SimpleCrypto` as Class to create a new SimpleCrypto instance.
 
-```javascript
-var simpleCrypto = new SimpleCrypto("a very secret key")
+```html
+<body>
+    <!-- Another line -->
+    <script lang="js">
+        var simpleCrypto = new SimpleCrypto("a very secret key")
+        <!-- Do your cryptographic logic here  -->
+    </script>
+    <!-- Another line -->
+</body>
 ```
 
 ### NodeJS
@@ -71,18 +80,16 @@ npm install --save simple-crypto-js
 yarn add simple-crypto-js
 ```
 
-Then, include **_SimpleCrypto_** your project. If you are using the new ECMAScript 6 (ECMAScript 2015) and later, you may use the new import statement:
+Then, include **_SimpleCrypto_** your project.
 
 ```javascript
-// ES6 and later
-import SimpleCrypto from "simple-crypto-js"
+var SimpleCrypto = require("simple-crypto-js").default
 ```
 
-However, if you are using ECMAScript 5 and older, use the require statement:
+If you are using Babel or TypeScript that support import statement, you could go that way.
 
 ```javascript
-// ES5 and older
-var SimpleCrypto = require("simple-crypto-js").default
+import SimpleCrypto from "simple-crypto-js"
 ```
 
 ## How to Use SimpleCrypto
