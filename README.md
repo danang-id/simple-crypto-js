@@ -41,7 +41,27 @@ For full change-log, please refer to [CHANGELOG](CHANGELOG.md) file.
 
 ## Getting Started
 
-This library is available through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js).
+This library is available through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js) and package manager (like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/)).
+
+### Vanila JavaScript + HTML
+
+To get started, add SimpleCrypto script to your HTML page.
+
+```html
+<head>
+    <script async="" src="//cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js"></script>
+</head>
+```
+
+Then, your script section, you may use `SimpleCrypto` as Class to create a new SimpleCrypto instance.
+
+```javascript
+var simpleCrypto = new SimpleCrypto("a very secret key")
+```
+
+### NodeJS
+
+If you are using NodeJS, add `simple-crypto-js` as your project dependency.
 
 ```bash
 # If you're using NPM
@@ -67,7 +87,7 @@ var SimpleCrypto = require("simple-crypto-js").default
 
 ## How to Use SimpleCrypto
 
-Full documentation about **_SimpleCrypto_** API is [available here](docs).
+Full documentation about **_SimpleCrypto_** API is [available here](https://simplecrypto.js.org/docs).
 
 ## Built With
 
