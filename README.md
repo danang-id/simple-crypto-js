@@ -27,6 +27,10 @@
 
 ## What's New?
 
+**What's New in 2.4.2**
+
+* Removed empty string check to allow decryption and encryption on empty string (as suggested by [@TransmissionsDev](https://github.com/TransmissionsDev) on [issue#21](https://github.com/danang-id/simple-crypto-js/issues/21)).
+
 **What's New in 2.4.1**
 
 * Fix a bug on type detection mechanism where a string that begins with number detected as number when decryption, thus cutting the rest of the string result (thanks [@TransmissionsDev](https://github.com/TransmissionsDev)).
