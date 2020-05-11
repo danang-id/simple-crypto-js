@@ -169,10 +169,6 @@ export class SimpleCrypto {
 	}
 
 	private _decrypt(): PlainData {
-		if (this._dataBuffer === "") {
-			throw new Error("No data was provided to be decrypted. Decryption halted.")
-		}
-
 		if (this._dataBuffer.length <= 64) {
 			throw new Error("Invalid cipher text. Decryption halted.")
 		}
