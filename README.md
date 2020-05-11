@@ -3,8 +3,7 @@
 [![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
 [![Build Status](https://travis-ci.org/danang-id/simple-crypto-js.svg?branch=master)](https://travis-ci.org/danang-id/simple-crypto-js) 
 [![Coverage Status](https://coveralls.io/repos/github/danang-id/simple-crypto-js/badge.svg?branch=master)](https://coveralls.io/github/danang-id/simple-crypto-js?branch=master)
-[![Dependencies Status](https://img.shields.io/david/danang-id/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
-[![DevDependencies Status](https://img.shields.io/david/dev/danang-id/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
+[![Dependencies Status](https://img.shields.io/librariesio/release/npm/simple-crypto-js)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
 
 [![NPM Version](https://img.shields.io/npm/v/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=versions)
 [![License](https://img.shields.io/npm/l/simple-crypto-js.svg)](#license)
@@ -27,6 +26,10 @@
   * [Acknowledgments](#acknowledgments)
 
 ## What's New?
+
+**What's New in 2.4.1**
+
+* Fix a bug on type detection mechanism where a string that begins with number detected as number when decryption, thus cutting the rest of the string result (thanks [@TransmissionsDev](https://github.com/TransmissionsDev)).
 
 **What's New in 2.4.0**
 

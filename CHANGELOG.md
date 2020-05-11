@@ -1,5 +1,9 @@
 ## Changes Log (What's New)
 
+**What's New in 2.4.1**
+
+* Fix a bug on type detection mechanism where a string that begins with number detected as number when decryption, thus cutting the rest of the string result (thanks [@TransmissionsDev](https://github.com/TransmissionsDev)).
+
 **What's New in 2.4.0**
 
 * Added data type detection. Decryption process will now return data with its proper data type. For now, object, string, number and boolean are supported.
