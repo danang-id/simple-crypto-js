@@ -48,7 +48,7 @@ export class SimpleCrypto {
 	}
 
 	private static sanitiseData(data: PlainData): PlainText {
-		if (data === void 0 || data === null || data === "") {
+		if (data === void 0 || data === null) {
 			throw new Error("There is no data provided. Process halted.")
 		}
 		const sanitised: string = typeof data === "object"
@@ -203,10 +203,6 @@ export class SimpleCrypto {
 	}
 
 	private _encrypt(): string {
-		if (this._dataBuffer === "") {
-			throw new Error("No data was provided to be encrypted. Encryption halted.")
-		}
-
 		const salt: string | WordArray = SimpleCrypto.generateRandom(128, true)
 		const initialVector: string | WordArray = SimpleCrypto.generateRandom(128, true)
 
