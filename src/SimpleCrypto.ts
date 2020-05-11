@@ -69,7 +69,7 @@ export class SimpleCrypto {
 		try {
 			return JSON.parse(src)
 		} catch (jsonError) {
-			return !isNaN(parseInt(src)) ? parseInt(src) : src
+			return /^-?[\d.]+(?:e-?\d+)?$/.test(src) && !isNaN(parseFloat(src)) ? parseFloat(src) : src
 		}
 	}
 

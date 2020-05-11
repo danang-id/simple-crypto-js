@@ -10,16 +10,19 @@ const object = {
   You: "should try it!"
 }
 const string = "SimpleCrypto is great."
+const stringThatStartsWithNumber = "49ers are my favorite team!"
 const number = 19960404
 const boolean = false
 
 const cipherTextFromObject = instance.encryptObject(object)
 const cipherTextFromString = instance.encrypt(string)
+const cipherTextFromStringThatStartsWithNumber = instance.encrypt(stringThatStartsWithNumber)
 const cipherTextFromNumber = instance.encrypt(number)
 const cipherTextFromBoolean = instance.encrypt(boolean)
 
 const plainExpectsObject = instance.decryptObject(cipherTextFromObject)
 const plainExpectsString = instance.decrypt(cipherTextFromString, SimpleCrypto.encoders.Utf8)
+const plainExpectsStringThatStartsWithNumber = instance.decrypt(cipherTextFromStringThatStartsWithNumber, SimpleCrypto.encoders.Utf8)
 const plainExpectsNumber = instance.decrypt(cipherTextFromNumber, false)
 const plainExpectsBoolean = instance.decrypt(cipherTextFromBoolean)
 
@@ -63,6 +66,9 @@ describe("Cryptographic: Decryption", () => {
   })
 
   it("should be able to decrypt to string", () => {
+    expect(plainExpectsStringThatStartsWithNumber).to.be.a("string")
+    expect(plainExpectsStringThatStartsWithNumber).to.be.eql(stringThatStartsWithNumber)
+    
     expect(plainExpectsString).to.be.a("string")
     expect(plainExpectsString).to.be.eql(string)
   })
