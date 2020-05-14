@@ -127,6 +127,12 @@
 <a href="#license"><img src="https://img.shields.io/npm/l/simple-crypto-js.svg" alt="License"></a>
 <a href="https://www.npmjs.com/package/simple-crypto-js"><img src="https://img.shields.io/npm/dm/simple-crypto-js.svg" alt="Monthly Downloads"></a></p>
 <p><strong><em>SimpleCrypto</em></strong> is a JavaScript library that simplify the process of encryption and decryption of JavaScript objects, as simple as just calling <code>encrypt()</code> and <code>decrypt()</code> function. This library implements brix's <a href="https://github.com/brix/crypto-js">crypto-js</a> library. This library is pure JavaScript library built with TypeScript targeting CommonJS ECMAScript 5 (ES5), so it is compatible with most NodeJS back-end applications or JavaScript front-end (client browser).</p>
+<h2>Breaking Changes</h2>
+<p><strong>v2.3.0: New Algorithm</strong></p>
+<p>SimpleCrypto v2.3.0 onward will use a new algorithm, because the older one was vulnerable to chosen cipher attack. Any <strong>data that encrypted using v2.2.0 and earlier will NOT be able to be decrypted using v2.3.0 onward</strong>; vice versa: data encrypted using v2.3.0 onward will NOT be able to be decrypted using v2.2.0 and earlier.</p>
+<p><strong>v3.0.0: New Native Crypto Module</strong></p>
+<p>SimpleCrypto v3.0.0 onward will use new <code>crypto-js</code> dependency version <code>^4.0.0</code>. This version of <code>crypto-js</code> replaces <code>Math.random()</code> method with native crypto module. Because of this, <strong>SimpleCrypto might not be able to run on some environments without native crypto module support, such as IE 10 (and earlier) or React Native</strong>.</p>
+<p>Please <a href="https://github.com/brix/crypto-js#400">read more here</a>.</p>
 <h2>Getting Started</h2>
 <p>This library is available through package manager (<a href="https://www.npmjs.org/">npm</a> and <a href="https://www.yarnpkg.com/">yarn</a>) and through <a href="https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js">jsDelivr CDN</a>.</p>
 <pre class="prettyprint source lang-bash"><code># If you're using NPM
