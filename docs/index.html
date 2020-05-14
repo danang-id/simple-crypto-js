@@ -134,20 +134,38 @@
 <p>SimpleCrypto v3.0.0 onward will use new <code>crypto-js</code> dependency version <code>^4.0.0</code>. This version of <code>crypto-js</code> replaces <code>Math.random()</code> method with native crypto module. Because of this, <strong>SimpleCrypto might not be able to run on some environments without native crypto module support, such as IE 10 (and earlier) or React Native</strong>.</p>
 <p>Please <a href="https://github.com/brix/crypto-js#400">read more here</a>.</p>
 <h2>Getting Started</h2>
-<p>This library is available through package manager (<a href="https://www.npmjs.org/">npm</a> and <a href="https://www.yarnpkg.com/">yarn</a>) and through <a href="https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js">jsDelivr CDN</a>.</p>
+<p>This library is available through <a href="https://cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js">jsDelivr CDN</a> and package manager (like <a href="https://www.npmjs.org/">npm</a> or <a href="https://www.yarnpkg.com/">yarn</a>).</p>
+<h3>Vanilla JavaScript + HTML</h3>
+<p>To get started, add SimpleCrypto script to your HTML page. Only SimpleCrypto prior to version 3.0.0 is supported.</p>
+<pre class="prettyprint source lang-html"><code>&lt;head>
+    &lt;!-- Another line -->
+    &lt;script src=&quot;//cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js&quot;>&lt;/script>
+    &lt;!-- Another line -->
+&lt;/head>
+</code></pre>
+<p>Then, your script section, you may use <code>SimpleCrypto</code> as Class to create a new SimpleCrypto instance.</p>
+<pre class="prettyprint source lang-html"><code>&lt;body>
+    &lt;!-- Another line -->
+    &lt;script lang=&quot;js&quot;>
+        var simpleCrypto = new SimpleCrypto(&quot;a very secret key&quot;)
+        &lt;!-- Do your cryptographic logic here  -->
+    &lt;/script>
+    &lt;!-- Another line -->
+&lt;/body>
+</code></pre>
+<h3>NodeJS</h3>
+<p>If you are using NodeJS, add <code>simple-crypto-js</code> as your project dependency.</p>
 <pre class="prettyprint source lang-bash"><code># If you're using NPM
 npm install --save simple-crypto-js
 
 # If you're using Yarn
 yarn add simple-crypto-js
 </code></pre>
-<p>Then, include <strong><em>SimpleCrypto</em></strong> your project. If you are using the new ECMAScript 6 (ECMAScript 2015) and later, you may use the new import statement:</p>
-<pre class="prettyprint source lang-javascript"><code>// ES6 and later
-import SimpleCrypto from &quot;simple-crypto-js&quot;
+<p>Then, include <strong><em>SimpleCrypto</em></strong> your project.</p>
+<pre class="prettyprint source lang-javascript"><code>var SimpleCrypto = require(&quot;simple-crypto-js&quot;).default
 </code></pre>
-<p>However, if you are using ECMAScript 5 and older, use the require statement:</p>
-<pre class="prettyprint source lang-javascript"><code>// ES5 and older
-var SimpleCrypto = require(&quot;simple-crypto-js&quot;).default
+<p>If you are using Babel or TypeScript that support import statement, you could go that way.</p>
+<pre class="prettyprint source lang-javascript"><code>import SimpleCrypto from &quot;simple-crypto-js&quot;
 </code></pre>
 <h2>Documentation</h2>
 <p><strong><em>SimpleCrypto</em></strong> has a very few and simple functions, but powerful. The ful list of all APIs and how to use those APIs are <a href="https://simplecrypto.js.org/docs/SimpleCrypto.html">available here</a>.</p>
