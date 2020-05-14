@@ -25,7 +25,36 @@ Please [read more here](https://github.com/brix/crypto-js#400).
 
 ## Getting Started
 
-This library is available through package manager ([npm](https://www.npmjs.org/) and [yarn](https://www.yarnpkg.com/)) and through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js).
+This library is available through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js) and package manager (like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/)).
+
+### Vanilla JavaScript + HTML
+
+To get started, add SimpleCrypto script to your HTML page. Only SimpleCrypto prior to version 3.0.0 is supported.
+
+```html
+<head>
+    <!-- Another line -->
+    <script src="//cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js"></script>
+    <!-- Another line -->
+</head>
+```
+
+Then, your script section, you may use `SimpleCrypto` as Class to create a new SimpleCrypto instance.
+
+```html
+<body>
+    <!-- Another line -->
+    <script lang="js">
+        var simpleCrypto = new SimpleCrypto("a very secret key")
+        <!-- Do your cryptographic logic here  -->
+    </script>
+    <!-- Another line -->
+</body>
+```
+
+### NodeJS
+
+If you are using NodeJS, add `simple-crypto-js` as your project dependency.
 
 ```bash
 # If you're using NPM
@@ -35,18 +64,16 @@ npm install --save simple-crypto-js
 yarn add simple-crypto-js
 ```
 
-Then, include **_SimpleCrypto_** your project. If you are using the new ECMAScript 6 (ECMAScript 2015) and later, you may use the new import statement:
+Then, include **_SimpleCrypto_** your project.
 
 ```javascript
-// ES6 and later
-import SimpleCrypto from "simple-crypto-js"
+var SimpleCrypto = require("simple-crypto-js").default
 ```
 
-However, if you are using ECMAScript 5 and older, use the require statement:
+If you are using Babel or TypeScript that support import statement, you could go that way.
 
 ```javascript
-// ES5 and older
-var SimpleCrypto = require("simple-crypto-js").default
+import SimpleCrypto from "simple-crypto-js"
 ```
 
 ## Documentation

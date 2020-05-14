@@ -52,16 +52,16 @@ For full change-log, please refer to [CHANGELOG](CHANGELOG.md) file.
 
 ## Getting Started
 
-This library is available through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js) and package manager (like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/)).
+This library is available through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js) and package manager (like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/)).
 
-### Vanila JavaScript + HTML
+### Vanilla JavaScript + HTML
 
-To get started, add SimpleCrypto script to your HTML page.
+To get started, add SimpleCrypto script to your HTML page. Only SimpleCrypto prior to version 3.0.0 is supported.
 
 ```html
 <head>
     <!-- Another line -->
-    <script src="//cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js"></script>
     <!-- Another line -->
 </head>
 ```
