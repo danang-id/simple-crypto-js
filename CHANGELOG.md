@@ -1,5 +1,9 @@
 ## Changes Log (What's New)
 
+**What's New in 2.5.0**
+
+* As the same with `2.4.1`, but rollback `crypto-js` dependency to version `3.3.0` to maintain compatibility with environment that does not support native crypto module.
+
 **What's New in 2.4.2**
 
 * Removed empty string check to allow decryption and encryption on empty string (as suggested by [@TransmissionsDev](https://github.com/TransmissionsDev) on [issue#21](https://github.com/danang-id/simple-crypto-js/issues/21)).
