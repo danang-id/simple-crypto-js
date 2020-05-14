@@ -1,6 +1,6 @@
 {
 	"name": "simple-crypto-js",
-	"version": "2.5.0",
+	"version": "3.0.0",
 	"description": "Simplify AES encryption and decryption of any JavaScript objects, implementing crypto-js library.",
 	"repository": "https://github.com/danang-id/simple-crypto-js.git",
 	"homepage": "https://simplecrypto.js.org/",
@@ -24,7 +24,7 @@
 		"clean": "rimraf dist lib"
 	},
 	"dependencies": {
-		"crypto-js": "^3.3.0"
+		"crypto-js": "^4.0.0"
 	},
 	"devDependencies": {
 		"@istanbuljs/nyc-config-typescript": "^1.0.1",
