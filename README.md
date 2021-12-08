@@ -44,7 +44,7 @@ Please [read more here](https://github.com/brix/crypto-js#400).
 
 * Upgrade `crypto-js` dependency to version `4.1.1`.
 * Improving typings.
-*
+
 **What's New in 2.5.1 (latest legacy)**
 
 * Improving typings.
