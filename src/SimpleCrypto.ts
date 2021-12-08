@@ -4,18 +4,13 @@
  * Simplified AES cryptography for safer and easier encryption and decryption processes
  * of any JavaScript objects.
  **/
-import {
-	Encoder,
-	WordArray,
-	AES,
-	enc,
-	lib,
-	mode,
-	pad,
-	HmacSHA256,
-	PBKDF2,
-	SHA3
-} from "crypto-js"
+import { AES, enc, lib, mode, pad, HmacSHA256, PBKDF2, SHA3 } from "crypto-js"
+
+export type Encoder = typeof enc.Base64
+export type Encoders = typeof enc & { Default: Encoder }
+export type PlainData = object | string | number | boolean
+export type PlainText = string
+export type CipherText = string
 
 /**
  * SimpleCrypto
@@ -23,10 +18,9 @@ import {
  * @class
  */
 export class SimpleCrypto {
-
 	private _dataBuffer: string
 	private _encoder: Encoder
-	private _secret: WordArray
+	private _secret: lib.WordArray
 	private readonly _keySize: number
 	private readonly _iterations: number
 
@@ -36,7 +30,7 @@ export class SimpleCrypto {
 	 * @constructor
 	 * @param	{string}	secret		The secret key for cryptographic process.
 	 */
-	public constructor(secret: string | WordArray) {
+	public constructor(secret: string | lib.WordArray) {
 		if (secret === void 0) {
 			throw new Error("SimpleCrypto object MUST BE initialised with a SECRET KEY.")
 		}
@@ -51,9 +45,10 @@ export class SimpleCrypto {
 		if (data === void 0 || data === null) {
 			throw new Error("There is no data provided. Process halted.")
 		}
-		const sanitised: string = typeof data === "object"
-			? JSON.stringify(data)
-			: typeof data === "string" || typeof data === "number" || typeof data === "boolean"
+		const sanitised: string =
+			typeof data === "object"
+				? JSON.stringify(data)
+				: typeof data === "string" || typeof data === "number" || typeof data === "boolean"
 				? data.toString()
 				: null
 		if (null === sanitised) {
@@ -85,20 +80,12 @@ export class SimpleCrypto {
 	 *
 	 * @see     WordArray
 	 *
-	 * @return  {object}  Returns object of Encoder instances.
+	 * @return  {Encoders}  Returns object of Encoder instances.
 	 */
-	public static get encoders(): {
-		Default: Encoder
-		Base64: Encoder
-		Hex: Encoder
-		Latin1: Encoder
-		Utf8: Encoder
-		Utf16: Encoder
-		Utf16LE: Encoder
-	} {
+	public static get encoders(): Encoders {
 		return {
 			Default: enc.Utf8,
-			...enc
+			...enc,
 		}
 	}
 
@@ -120,11 +107,8 @@ export class SimpleCrypto {
 	 *
 	 * @return  {string | WordArray}  Returns a random string or WordArray.
 	 */
-	public static generateRandom(
-		length: number = 128,
-		expectsWordArray: boolean = false
-	): string | WordArray {
-		const random = lib.WordArray.random(length/8)
+	public static generateRandom(length = 128, expectsWordArray = false): string | lib.WordArray {
+		const random = lib.WordArray.random(length / 8)
 		return expectsWordArray ? random : random.toString()
 	}
 
@@ -144,7 +128,7 @@ export class SimpleCrypto {
 	 *
 	 * @return  {string | WordArray}  Returns a random string.
 	 */
-	public static generateRandomString(length: number = 128): string {
+	public static generateRandomString(length = 128): string {
 		return <string>SimpleCrypto.generateRandom(length, false)
 	}
 
@@ -164,8 +148,8 @@ export class SimpleCrypto {
 	 *
 	 * @return  {string | WordArray}  Returns a random WordArray.
 	 */
-	public static generateRandomWordArray(length: number = 128): WordArray {
-		return <WordArray>SimpleCrypto.generateRandom(length, true)
+	public static generateRandomWordArray(length = 128): lib.WordArray {
+		return <lib.WordArray>SimpleCrypto.generateRandom(length, true)
 	}
 
 	private _decrypt(): PlainData {
@@ -173,17 +157,17 @@ export class SimpleCrypto {
 			throw new Error("Invalid cipher text. Decryption halted.")
 		}
 
-		const salt: string = enc.Hex.parse(this._dataBuffer.substr(0, 32))
-		const initialVector: string = enc.Hex.parse(this._dataBuffer.substr(32, 32))
-		const encrypted: string = this._dataBuffer.substring(64, this._dataBuffer.length-64)
+		const salt = enc.Hex.parse(this._dataBuffer.substring(0, 32))
+		const initialVector = enc.Hex.parse(this._dataBuffer.substring(32, 64))
+		const encrypted = this._dataBuffer.substring(64, this._dataBuffer.length - 64)
 
-		const key: string | WordArray = PBKDF2(this._secret.toString(), salt, {
+		const key = PBKDF2(this._secret.toString(), salt, {
 			keySize: this._keySize / 32,
-			iterations: this._iterations
+			iterations: this._iterations,
 		})
 
-		const hashedCipherText = this._dataBuffer.substring(this._dataBuffer.length-64)
-		const cipherText = this._dataBuffer.substring(0,this._dataBuffer.length-64)
+		const hashedCipherText = this._dataBuffer.substring(this._dataBuffer.length - 64)
+		const cipherText = this._dataBuffer.substring(0, this._dataBuffer.length - 64)
 
 		if (hashedCipherText != HmacSHA256(cipherText, key).toString()) {
 			throw new Error("Invalid encrypted text received. Decryption halted.")
@@ -192,31 +176,29 @@ export class SimpleCrypto {
 		const decrypted = AES.decrypt(encrypted, key, {
 			iv: initialVector,
 			padding: pad.Pkcs7,
-			mode: mode.CBC
+			mode: mode.CBC,
 		})
 
 		return SimpleCrypto.transform(decrypted.toString(SimpleCrypto.encoders.Default))
 	}
 
 	private _encrypt(): string {
-		const salt: string | WordArray = SimpleCrypto.generateRandom(128, true)
-		const initialVector: string | WordArray = SimpleCrypto.generateRandom(128, true)
+		const salt = SimpleCrypto.generateRandom(128, true)
+		const initialVector = SimpleCrypto.generateRandom(128, true)
 
-		const key: WordArray = PBKDF2(this._secret.toString(), salt, {
+		const key = PBKDF2(this._secret.toString(), salt, {
 			keySize: this._keySize / 32,
-			iterations: this._iterations
+			iterations: this._iterations,
 		})
 
-		const encrypted: WordArray = AES.encrypt(this._dataBuffer, key, {
-			iv: initialVector as string,
+		const encrypted = AES.encrypt(this._dataBuffer, key, {
+			iv: initialVector as lib.WordArray,
 			padding: pad.Pkcs7,
-			mode: mode.CBC
+			mode: mode.CBC,
 		})
 
 		// Combining the encrypted string with salt and IV to form cipher-text
-		const cipherText = salt.toString()
-			+ initialVector.toString()
-			+ encrypted.toString()
+		const cipherText = salt.toString() + initialVector.toString() + encrypted.toString()
 
 		// Generate authentication tag and append that to the cipher-text using the key derived from PBKDF2.
 		// (Optional TODO: Include a module to generate authentication key. Possibly HKDF-SHA256.)
@@ -313,13 +295,9 @@ export class SimpleCrypto {
 	 */
 	public decrypt(cipher: CipherText, expectsObject: boolean, encoder: Encoder): PlainData
 
-	public decrypt(
-		cipher?: CipherText,
-		secondArg?: boolean | Encoder,
-		thirdArg?: boolean | Encoder
-	): PlainData {
+	public decrypt(cipher?: CipherText, secondArg?: boolean | Encoder, thirdArg?: Encoder): PlainData {
 		const setDecryptionOption = (arg: boolean | Encoder): void => {
-			if (typeof arg !== "boolean")this.setEncoder(arg) 
+			if (typeof arg !== "boolean") this.setEncoder(arg)
 		}
 		try {
 			if (cipher !== void 0) {
@@ -369,7 +347,9 @@ export class SimpleCrypto {
 
 	public encrypt(data?: PlainData): CipherText {
 		try {
-			if (data !== void 0) { this.update(data) }
+			if (data !== void 0) {
+				this.update(data)
+			}
 			return this._encrypt()
 		} catch (error) {
 			throw error
@@ -481,10 +461,10 @@ export class SimpleCrypto {
 	 */
 	public setEncoder(encoder: Encoder): SimpleCrypto {
 		/*
-		* TODO: Encoding support is dropped at the moment, both for encryption
-		*  and decryption. We should figure out how we have to implement encoding
-		*  support in the simplest way possible.
-		* */
+		 * TODO: Encoding support is dropped at the moment, both for encryption
+		 *  and decryption. We should figure out how we have to implement encoding
+		 *  support in the simplest way possible.
+		 * */
 		this._encoder = encoder
 		return this
 	}
@@ -506,15 +486,10 @@ export class SimpleCrypto {
 	 *
 	 * @return  {SimpleCrypto}		Current SimpleCrypto instance.
 	 */
-	public setSecret(secret: string | WordArray): SimpleCrypto {
+	public setSecret(secret: string | lib.WordArray): SimpleCrypto {
 		this._secret = SHA3(typeof secret === "string" ? secret : secret.toString())
 		return this
 	}
-
 }
 
 export default SimpleCrypto
-
-export type PlainData = object | string | number | boolean
-export type PlainText = string
-export type CipherText = string

@@ -1,5 +1,21 @@
 ## Changes Log (What's New)
 
+Latest Current: [![Latest Version](https://img.shields.io/npm/v/simple-crypto-js/latest.svg)](https://www.npmjs.com/package/simple-crypto-js)
+Latest Legacy: [![Legacy Version](https://img.shields.io/npm/v/simple-crypto-js/legacy.svg)](https://www.npmjs.com/package/simple-crypto-js/v/legacy)
+
+**What's New in 3.0.1 (latest current)**
+
+* Upgrade `crypto-js` dependency to version `4.1.1`.
+* Improving typings.
+* Add eslint and prettier for code cleaning.
+* Upgrade devDependencies.
+
+**What's New in 2.5.1 (latest legacy)**
+
+* Improving typings.
+* Add eslint and prettier for code cleaning.
+* Upgrade devDependencies.
+
 **What's New in 3.0.0**
 
 * Upgrade `crypto-js` dependency to version `4.0.0`. This version of `crypto-js` replaces `Math.random()` method with native crypto module, and will cause breaking changes in some environments that does not support native crypto module, like IE 10 earlier and React Native. If you are affected by these changes, please use SimpleCrypto `^2.5.0`.

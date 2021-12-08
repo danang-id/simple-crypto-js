@@ -1,11 +1,11 @@
 # SimpleCrypto
 
 [![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
-[![Build Status](https://travis-ci.org/danang-id/simple-crypto-js.svg?branch=master)](https://travis-ci.org/danang-id/simple-crypto-js) 
+[![Build Distribution and Test](https://github.com/danang-id/simple-crypto-js/actions/workflows/build-distribution-and-test.yml/badge.svg)](https://github.com/danang-id/simple-crypto-js/actions/workflows/build-distribution-and-test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/danang-id/simple-crypto-js/badge.svg?branch=master)](https://coveralls.io/github/danang-id/simple-crypto-js?branch=master)
 [![Dependencies Status](https://img.shields.io/librariesio/release/npm/simple-crypto-js)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
 
-[![NPM Version](https://img.shields.io/npm/v/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=versions)
+[![NPM Version](https://img.shields.io/npm/v/simple-crypto-js/latest.svg)](https://www.npmjs.com/package/simple-crypto-js)
 [![License](https://img.shields.io/npm/l/simple-crypto-js.svg)](#license)
 [![Monthly Downloads](https://img.shields.io/npm/dm/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js)
 
@@ -19,49 +19,50 @@ SimpleCrypto v2.3.0 onward will use a new algorithm, because the older one was v
 
 **v3.0.0: New Native Crypto Module**
 
-SimpleCrypto v3.0.0 onward will use new `crypto-js` dependency version `^4.0.0`. This version of `crypto-js` replaces `Math.random()` method with native crypto module. Because of this, **SimpleCrypto might not be able to run on some environments without native crypto module support, such as IE 10 (and earlier) or React Native**. 
+SimpleCrypto v3.0.0 onward will use new `crypto-js` dependency version `^4.0.0`. This version of `crypto-js` replaces `Math.random()` method with native crypto module. Because of this, **SimpleCrypto might not be able to run on some environments without native crypto module support, such as IE 10 (and earlier) or React Native**.
 
 Please [read more here](https://github.com/brix/crypto-js#400).
 
 ## List of Contents
 
 * [SimpleCrypto](#simplecrypto)
-  * [Breaking Changes](#breaking-changes)
-  * [List of Contents](#list-of-contents)
-  * [What's New?](#whats-new)
-  * [Getting Started](#getting-started)
-  * [How to Use SimpleCrypto](#how-to-use-simplecrypto)
-  * [Built With](#built-with)
-  * [Contribution](#contribution)
-  * [Version Management](#version-management)
-  * [Authors](#authors)
-  * [License](#license)
-  * [Acknowledgments](#acknowledgments)
+    * [Breaking Changes](#breaking-changes)
+    * [List of Contents](#list-of-contents)
+    * [What's New?](#whats-new)
+    * [Getting Started](#getting-started)
+    * [How to Use SimpleCrypto](#how-to-use-simplecrypto)
+    * [Built With](#built-with)
+    * [Contribution](#contribution)
+    * [Version Management](#version-management)
+    * [Authors](#authors)
+    * [License](#license)
+    * [Acknowledgments](#acknowledgments)
 
 ## What's New?
 
-**What's New in 3.0.0**
+**What's New in 3.0.1 (latest current)**
 
-* Upgrade `crypto-js` dependency to version `4.0.0`. This version of `crypto-js` replaces `Math.random()` method with native crypto module, and will cause breaking changes in some environments that does not support native crypto module, like IE 10 earlier and React Native. If you are affected by these changes, please use SimpleCrypto `^2.5.0`.
+* Upgrade `crypto-js` dependency to version `4.1.1`.
+* Improving typings.
+*
+**What's New in 2.5.1 (latest legacy)**
 
-**What's New in 2.5.0**
-
-* As the same with `2.4.1`, but rollback `crypto-js` dependency to version `3.3.0` to maintain compatibility with environment that does not support native crypto module.
+* Improving typings.
 
 For full change-log, please refer to [CHANGELOG](CHANGELOG.md) file.
 
 ## Getting Started
 
-This library is available through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js) and package manager (like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/)).
+This library is available through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@legacy/dist/SimpleCrypto.min.js) and package manager (like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/)).
 
 ### Vanilla JavaScript + HTML
 
-To get started, add SimpleCrypto script to your HTML page. Only SimpleCrypto prior to version 3.0.0 is supported.
+To get started, add SimpleCrypto script to your HTML page. **Only legacy version of SimpleCrypto is supported.**
 
 ```html
 <head>
     <!-- Another line -->
-    <script src="//cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/simple-crypto-js@legacy/dist/SimpleCrypto.min.js"></script>
     <!-- Another line -->
 </head>
 ```
@@ -70,12 +71,12 @@ Then, your script section, you may use `SimpleCrypto` as Class to create a new S
 
 ```html
 <body>
-    <!-- Another line -->
-    <script lang="js">
-        var simpleCrypto = new SimpleCrypto("a very secret key")
-        <!-- Do your cryptographic logic here  -->
-    </script>
-    <!-- Another line -->
+<!-- Another line -->
+<script lang="js">
+    var simpleCrypto = new SimpleCrypto("a very secret key")
+    <!-- Do your cryptographic logic here  -->
+</script>
+<!-- Another line -->
 </body>
 ```
 

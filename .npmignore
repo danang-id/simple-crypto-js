@@ -60,6 +60,11 @@ test
 
 # Coveralls configuration
 .coveralls.yml
+
+# eslint configuration
+.eslintrc.js
+.prettierrc.js
+
 # Yarn
 .yarn
 .pnp*
