@@ -8,23 +8,33 @@ on:
 
 jobs:
   build:
-
+  
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-
+    
     steps:
     - uses: actions/checkout@v2
     
-    - name: Set up NodeJS${{ matrix.node-version }}
+    - name: Set up NodeJS 16
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 16
         
     - name: Install dependencies
       run: yarn
       
     - name: Build documentation
       run: yarn docs
+      
+    - name: Update repository
+      run: |
+        git config pull.rebase false
+        git pull
+        git add .
+        git config --global user.name "Danang Galuh Tegar Prasetyo"
+        git config --global user.email "connect@danang.id"
+        git commit -m "[GitHub Actions Automated] Update documentation"
+        
+    - name: Push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
