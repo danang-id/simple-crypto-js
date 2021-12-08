@@ -60,3 +60,6 @@ test
 
 # Coveralls configuration
 .coveralls.yml
+# Yarn
+.yarn
+.pnp*

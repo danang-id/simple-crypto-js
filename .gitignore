@@ -57,3 +57,12 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Yarn without Zero Install
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
