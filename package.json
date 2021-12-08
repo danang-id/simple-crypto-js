@@ -26,6 +26,7 @@
 	},
 	"dependencies": {
 		"crypto-js": "^4.0.0"
+		"crypto-js": "^4.1.1"
 	},
 	"devDependencies": {
 		"@istanbuljs/nyc-config-typescript": "^1.0.1",
