@@ -11,6 +11,7 @@
 		"dist/*",
 		"docs/*",
 		"lib/*",
+		"CHANGELOG.md",
 		"DOCUMENTATION.md",
 		"SECURITY.md"
 	],
