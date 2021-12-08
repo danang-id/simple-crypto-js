@@ -1,11 +1,11 @@
 # SimpleCrypto
 
 [![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
-[![Build Status](https://travis-ci.org/danang-id/simple-crypto-js.svg?branch=master)](https://travis-ci.org/danang-id/simple-crypto-js) 
+[![Build Distribution](https://github.com/danang-id/simple-crypto-js/actions/workflows/build-distribution.yml/badge.svg)](https://github.com/danang-id/simple-crypto-js/actions/workflows/build-distribution.yml)
 [![Coverage Status](https://coveralls.io/repos/github/danang-id/simple-crypto-js/badge.svg?branch=master)](https://coveralls.io/github/danang-id/simple-crypto-js?branch=master)
-[![Dependencies Status](https://img.shields.io/librariesio/release/npm/simple-crypto-js)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
+[![Dependencies Status](https://img.shields.io/librariesio/release/npm/simple-crypto-js/latest.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
 
-[![NPM Version](https://img.shields.io/npm/v/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js?activeTab=versions)
+[![NPM Version](https://img.shields.io/npm/v/simple-crypto-js/latest.svg)](https://www.npmjs.com/package/simple-crypto-js)
 [![License](https://img.shields.io/npm/l/simple-crypto-js.svg)](#license)
 [![Monthly Downloads](https://img.shields.io/npm/dm/simple-crypto-js.svg)](https://www.npmjs.com/package/simple-crypto-js)
 
@@ -25,16 +25,16 @@ Please [read more here](https://github.com/brix/crypto-js#400).
 
 ## Getting Started
 
-This library is available through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js) and package manager (like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/)).
+This library is available through [jsDelivr CDN](https://cdn.jsdelivr.net/npm/simple-crypto-js@legacy/dist/SimpleCrypto.min.js) and package manager (like [npm](https://www.npmjs.org/) or [yarn](https://www.yarnpkg.com/)).
 
 ### Vanilla JavaScript + HTML
 
-To get started, add SimpleCrypto script to your HTML page. Only SimpleCrypto prior to version 3.0.0 is supported.
+To get started, add SimpleCrypto script to your HTML page. **Only legacy version of SimpleCrypto is supported.**
 
 ```html
 <head>
     <!-- Another line -->
-    <script src="//cdn.jsdelivr.net/npm/simple-crypto-js@2.5.0/dist/SimpleCrypto.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/simple-crypto-js@legacy/dist/SimpleCrypto.min.js"></script>
     <!-- Another line -->
 </head>
 ```
