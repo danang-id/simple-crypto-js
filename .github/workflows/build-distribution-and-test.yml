@@ -1,0 +1,28 @@
+name: Build Distribution and Test
+
+on:
+  push:
+    branches: [ latest, legacy ]
+  pull_request:
+    branches: [ latest, legacy ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use NodeJS${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: yarn build
+    - run: yarn dist
+    - run: yarn test
+    - run: yarn coverage
