@@ -1,0 +1,38 @@
+name: Test Coveralls
+
+on:
+  push:
+    branches: [ latest, legacy ]
+  pull_request:
+    branches: [ latest, legacy ]
+
+jobs:
+  build:
+
+    name: Build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up NodeJS${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Install dependency
+      run: yarn
+      
+    - name: Running test
+      run: |
+        yarn test
+        yarn coveralls
+        
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
