@@ -4,10 +4,11 @@
 
 Only these versions are currently being supported with security updates.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 2.3.0   | :white_check_mark: |
-| < 2.3   | :x:                |
+| Tag    | Version                  | Supported          |
+| ------ | ------------------------ | ------------------ |
+| latest | >= 3.0.0                 | :white_check_mark: |
+| legacy | >= 2.3.0 && < 3.0.0      | :white_check_mark: |
+|        | < 2.3                    | :x:                |
 
 ## Reporting a Vulnerability
 

@@ -1,5 +1,13 @@
 ## Changes Log (What's New)
 
+Latest Legacy: [![Legacy Version](https://img.shields.io/npm/v/simple-crypto-js/legacy.svg)](https://www.npmjs.com/package/simple-crypto-js/v/legacy)
+
+**What's New in 2.5.1 (latest legacy)**
+
+* Improving typings.
+* Add eslint and prettier for code cleaning.
+* Upgrade devDependencies.
+
 **What's New in 2.5.0**
 
 * As the same with `2.4.1`, but rollback `crypto-js` dependency to version `3.3.0` to maintain compatibility with environment that does not support native crypto module.
