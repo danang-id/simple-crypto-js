@@ -1,4 +1,4 @@
-name: Build Distribution and Test
+name: Build Distribution
 
 on:
   push:
@@ -17,13 +17,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use NodeJS${{ matrix.node-version }}
+    
+    - name: Set up NodeJS${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: yarn
-    - run: yarn build
-    - run: yarn dist
-    - run: yarn test
-    - run: yarn coverage
+        
+    - name: Install dependencies
+      run: yarn
+      
+    - name: Build distribution
+      run: | 
+        yarn build 
+        yarn dist
