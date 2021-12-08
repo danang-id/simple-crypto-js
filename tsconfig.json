@@ -1,17 +1,18 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "sourceMap": true,
-    "declaration": true,
-    "outDir": "lib",
-    "esModuleInterop": true
-  },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"sourceMap": true,
+		"declaration": true,
+		"outDir": "lib",
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }
