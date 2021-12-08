@@ -1,7 +1,7 @@
 # SimpleCrypto
 
 [![GitHub Release](https://img.shields.io/github/release/danang-id/simple-crypto-js.svg)](https://github.com/danang-id/simple-crypto-js/releases)
-[![Build Distribution and Test](https://github.com/danang-id/simple-crypto-js/actions/workflows/build-distribution-and-test.yml/badge.svg)](https://github.com/danang-id/simple-crypto-js/actions/workflows/build-distribution-and-test.yml)
+[![Build Distribution](https://github.com/danang-id/simple-crypto-js/actions/workflows/build-distribution.yml/badge.svg)](https://github.com/danang-id/simple-crypto-js/actions/workflows/build-distribution.yml)
 [![Coverage Status](https://coveralls.io/repos/github/danang-id/simple-crypto-js/badge.svg?branch=master)](https://coveralls.io/github/danang-id/simple-crypto-js?branch=master)
 [![Dependencies Status](https://img.shields.io/librariesio/release/npm/simple-crypto-js)](https://www.npmjs.com/package/simple-crypto-js?activeTab=dependencies)
 
